@@ -1,14 +1,12 @@
 <style>
-    .navbarStyle{
+    .navbarStyle a, .navbarStyle a:hover{
         color: white;
         text-decoration: none;
         position: relative;
+        font-family: "Play", sans-serif;
     }
 
-    .navbarStyle:hover{
-        color: white;
-    }
-    .navbarStyle::before{
+    .navbarStyle a::before{
         content: '';
         position: absolute;
         bottom: -0.4rem;
@@ -19,11 +17,10 @@
         transform: scale(0, 1);
     }
 
-    .navbarStyle:hover::before{
+    .navbarStyle a:hover::before{
         transition: transform 0.6s ease;
         transform: scale(1, 1);
     }
-
 
 
 
@@ -34,23 +31,40 @@
         top: -0.5rem;
     }
 
+    .moreAboutMeButton, .moreAboutMeButton:hover{
+        color: white;
+        text-decoration: none;
+    }
+
+    .mainText h2{
+        font-weight: bold;
+        font-family: "Play", sans-serif;
+    }
 </style>
 {% extends 'layout.html' %}
 {% block content %}
     <div style="height: 70vh; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top; background-size: cover">
-        <div class="container py-4">
+        <div class="container py-3" style="max-width: 75%">
             <div class="navbar">
                 <div>
                     <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
                     <a class="navbar-brand navbarStyle" href="{% url 'mainApp:index' %}">PORTFOLIO</a>
                 </div>
-                <div>
-                    <a class="navbarStyle" href="{% url 'mainApp:index' %}">HOME</a>
-                    <a class="ml-5 navbarStyle" href="{% url 'mainApp:index' %}">ABOUT</a>
-                    <a class="ml-5 navbarStyle" href="{% url 'mainApp:index' %}">PORTFOLIO</a>
-                    <a class="ml-5 navbarStyle" href="{% url 'mainApp:index' %}">SERVICES</a>
-                    <a class="ml-5 navbarStyle" href="{% url 'mainApp:index' %}">PAGES</a>
-                    <a class="ml-5 navbarStyle" href="{% url 'mainApp:index' %}">CONTACT</a>
+                <div class="navbarStyle">
+                    <a href="{% url 'mainApp:index' %}">HOME</a>
+                    <a class="ml-5" href="{% url 'mainApp:index' %}">ABOUT</a>
+                    <a class="ml-5" href="{% url 'mainApp:index' %}">PORTFOLIO</a>
+                    <a class="ml-5" href="{% url 'mainApp:index' %}">SERVICES</a>
+                    <a class="ml-5" href="{% url 'mainApp:index' %}">PAGES</a>
+                    <a class="ml-5" href="{% url 'mainApp:index' %}">CONTACT</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-6 mainText">
+                    <span>FOR WEBSITE AND VIDEO EDITING</span>
+                    <h2 class="display-5">VIDEOGRAPHER'S PORTFOLIO</h2>
+                    <a class="moreAboutMeButton" href="{% url 'mainApp:index' %}">SEE MORE ABOUT ME</a>
                 </div>
             </div>
         </div>
