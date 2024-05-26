@@ -3,9 +3,10 @@
         color: white;
         text-decoration: none;
         position: relative;
+        padding: 1.8vh;
     }
 
-    #mainText span, #mainText a, #mainText h2{
+    #mainText span, #moreAboutMeButton, #mainText h2{
         color: white;
         font-family: "Play", sans-serif;
     }
@@ -14,19 +15,13 @@
         animation: jump-combo 1s ease-in-out alternate; /* Combined animation */
     }
 
-    @keyframes jump-combo {
-      0% { transform: translateY(0); } /* Start at original position */
-      33% { transform: translateY(-20px); } /* Jump up (0.5s) */
-      66% { transform: translateY(5px); } /* Dip below (0.5s) */  /* Adjusted line */
-      100% { transform: translateY(0); } /* Reset to original position (0.5s) */
-    }
 
     #mainText h2{
         font-weight: bold;
     }
 
     #mainText{
-        padding-top: 20%;
+        padding-top: 10%;
         font-size: 1.3rem;
     }
 
@@ -35,18 +30,58 @@
         background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
         background-size: cover;
     }
+
+
+
+
+    #moreAboutMeButton::before, #moreAboutMeButton::after{
+        content: '';
+        position: absolute;
+        width: 15%;
+        height: 70%;
+        transition: width 1s ease-in-out, height 1s ease-in-out;
+    }
+
+    #moreAboutMeButton::before {
+        top: 0;
+        left: 0;
+        border-left: 2px solid cyan;
+        border-top: 2px solid cyan;
+        transform-origin: top left;
+    }
+
+    #moreAboutMeButton:hover::before, #moreAboutMeButton:hover::after{
+        width: 100%;
+        height: 100%;
+        transform: scaleX(1) scaleY(1);
+    }
+
+    #moreAboutMeButton::after {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid cyan;
+        border-right: 2px solid cyan;
+        transform-origin: bottom right;
+    }
+
+
+
+
+
+
+
+
+
 </style>
 {% extends 'layout.html' %}
 {% block title %}Portfolio{% endblock %}
 {% block content %}
-    <div>
-        <div class="container" style="max-width: 75%">
-            <div class="row">
-                <div class="col col-md-6" id="mainText">
-                    <span>FOR WEBSITE AND VIDEO EDITING</span>
-                    <h2 class="display-3">PROGRAMMER'S PORTFOLIO</h2>
-                    <a id="moreAboutMeButton" href="{% url 'mainApp:index' %}">SEE MORE ABOUT ME</a>
-                </div>
+    <div class="container" style="max-width: 75%">
+        <div class="row">
+            <div class="col col-md-6" id="mainText">
+                <span class="">FOR WEBSITE AND VIDEO EDITING</span>
+                <h2 class="display-3 pb-5 py-5">PROGRAMMER'S PORTFOLIO</h2>
+                <a id="moreAboutMeButton" href="{% url 'mainApp:index' %}">SEE MORE ABOUT ME</a>
             </div>
         </div>
     </div>

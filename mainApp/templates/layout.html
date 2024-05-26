@@ -28,22 +28,26 @@
             position: absolute;
             bottom: 0;
             left: 50%;
-            width: 0;
+            width: 20%;
             height: 0.1rem;
             background-color: cyan;
             visibility: hidden;
             transition: 0.3s ease-in-out;
             transform: translateX(-50%);
+            opacity: 0;
+        }
+
+        @keyframes jump-combo {
+          0% { transform: translateY(0); } /* Start at original position */
+          50% { transform: translateY(-20px); } /* Jump up (0.5s) */
+          100% { transform: translateY(0); } /* Reset to original position (0.5s) */
         }
 
         .navbarStyle a:hover::before, .navbarStyle a.active::before {
             visibility: visible;
             width: 80%;
+            opacity: 1;
         }
-    }
-
-    .navbarStyle a.active{
-        color: white;
     }
 
     #logo{
@@ -53,6 +57,9 @@
         top: -0.5rem;
     }
 
+    .contactIcons{
+        max-width: 10%;
+    }
 
     .contactIcons li a{
         color: white;
@@ -69,14 +76,118 @@
         left: 0;
         position: relative;
         content: "";
-        margin: 0 1rem;
+    }
+
+
+    .navbarStyle .nav-link.active {
+        color: white;
+    }
+
+    .circle {
+      height: 20px;
+      width: 20px;
+      border-radius: 24px;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999; /* so that it stays on top of all other elements */
     }
 </style>
+
+<div id="circlesContainer"></div>
+
+<script type="module">
+  const coords = { x: 0, y: 0 };
+  const colors = [
+    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c",
+    "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e",
+    "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"
+  ];
+  const circlesContainer = document.getElementById("circlesContainer");
+
+  for (let i = 0; i < 40; i++) {
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+    circle.style.backgroundColor = colors[i % colors.length];
+    circlesContainer.appendChild(circle);
+  }
+
+  const circles = document.querySelectorAll(".circle");
+  circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.opacity = 0; // Initially set opacity to 0 (invisible)
+  });
+
+  let isCursorStill = true;
+  let lastX = 0;
+  let lastY = 0;
+  const movementThreshold = 80;
+  let timeoutId = null;
+
+  window.addEventListener("mousemove", function(e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+
+    const distanceX = Math.abs(coords.x - lastX);
+    const distanceY = Math.abs(coords.y - lastY);
+    const totalDistance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+    if (totalDistance > movementThreshold) {
+      isCursorStill = false;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    } else {
+      if (!timeoutId) {
+        timeoutId = setTimeout(() => {
+          isCursorStill = true;
+          timeoutId = null;
+        }, 200);
+      }
+    }
+
+    lastX = coords.x;
+    lastY = coords.y;
+  });
+
+  function animateCircles() {
+    if (!isCursorStill) {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 5 + "px";
+        circle.style.top = y - 4 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+        circle.x = x;
+        circle.y = y;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+        circle.style.opacity = 1;
+      });
+    } else {
+      circles.forEach(function (circle) {
+        circle.style.opacity = 0;
+      });
+    }
+
+    requestAnimationFrame(animateCircles);
+  }
+
+  animateCircles();
+</script>
+
+
 
 <body style="background-color: rgb(16, 0, 40)" id="background">
     <div class="container" style="max-width: 75%">
         <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" id="portfolioBrand" href="{% url 'mainApp:index' %}">
+            <a class="navbar-brand py-3" id="portfolioBrand" href="{% url 'mainApp:index' %}">
                 <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
                 PORTFOLIO
             </a>
@@ -141,6 +252,7 @@
                 </ul>
         </nav>
     </div>
+
     {% block content %}
     {% endblock %}
 </body>
