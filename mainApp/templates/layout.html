@@ -43,7 +43,7 @@
           100% { transform: translateY(0); } /* Reset to original position (0.5s) */
         }
 
-        .navbarStyle a:hover::before, .navbarStyle a.active::before {
+        .navbarStyle a:hover::before {
             visibility: visible;
             width: 80%;
             opacity: 1;
@@ -178,52 +178,52 @@
 
     requestAnimationFrame(animateCircles);
   }
-
-  animateCircles();
+  //setTimeout(animateCircles, 5000);
 </script>
 
 
 
-<body style="background-color: rgb(16, 0, 40)" id="background">
-    <div class="container" style="max-width: 75%">
-        <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand py-3" id="portfolioBrand" href="{% url 'mainApp:index' %}">
-                <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
-                PORTFOLIO
-            </a>
+<body style="background-color: rgb(16, 0, 40)">
+    <div id="background">
+        <div class="container" style="max-width: 75%">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand py-3" id="portfolioBrand" href="{% url 'mainApp:index' %}">
+                    <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
+                    PORTFOLIO
+                </a>
 
-            <button type="button"
-            aria-label="Navigation"
-            aria-expanded="false"
-            aria-controls="navbarNav"
-            class="navbar-toggler"
-            data-bs-target="#centerNav"
-            data-bs-toggle="collapse"> <span style="background-color: white" class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbarStyle collapse navbar-collapse justify-content-center" id="centerNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'mainApp:index' %}">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'mainApp:about' %}">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'mainApp:index' %}">PORTFOLIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'mainApp:index' %}">SERVICES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'mainApp:index' %}">PAGES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'mainApp:index' %}">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
+                <button type="button"
+                aria-label="Navigation"
+                aria-expanded="false"
+                aria-controls="navbarNav"
+                class="navbar-toggler"
+                data-bs-target="#centerNav"
+                data-bs-toggle="collapse"> <span style="background-color: white" class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbarStyle collapse navbar-collapse justify-content-center" id="centerNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainApp:index' %}">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainApp:about' %}">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainApp:index' %}">PORTFOLIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainApp:index' %}">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainApp:index' %}">PAGES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainApp:index' %}">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <ul class="navbar-nav contactIcons collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav contactIcons collapse navbar-collapse justify-content-end">
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/StefanAngelovski">
                             <i class="fa fa-github"></i>
@@ -250,10 +250,79 @@
                         </a>
                     </li>
                 </ul>
-        </nav>
+            </nav>
+            {% block backgroundContent %}{% endblock %}
+        </div>
     </div>
+    <div class="container" style="max-width: 75%; padding-top: 4%; padding-bottom: 4%">
+        {% block content %}{% endblock %}
+    </div>
+    {% block centerSection %}{% endblock %}
+    <div class="container" style="max-width: 75%;">
+        <footer class="pb-5">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" id="portfolioBrand" href="{% url 'mainApp:index' %}">
+                    <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
+                    PORTFOLIO
+                </a>
 
-    {% block content %}
-    {% endblock %}
+                <ul class="navbar-nav contactIcons collapse navbar-collapse justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/StefanAngelovski">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa fa-linkedin"></i>
+                        </a>
+                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="row">
+                <div class="col">
+                    <h5>About us</h5>
+                    <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing.</p>
+                    <a>Read more</a>
+                </div>
+
+                <div class="col">
+                    <h5>Who we are</h5>
+                    <a href="#">Team</a>
+                    <a href="#">Carriers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Locations</a>
+                </div>
+
+                <div class="col">
+                    <h5>Our work</h5>
+                    <a href="#">Feature</a>
+                    <a href="#">Latest</a>
+                    <a href="#">Browse Archive</a>
+                    <a href="#">Video for web</a>
+                </div>
+
+                <div class="col">
+                    <h5>Newsletter</h5>
+                    <p>Videoprah is an award-winning, full-service production company specializing.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

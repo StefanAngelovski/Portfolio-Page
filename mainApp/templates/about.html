@@ -1,4 +1,11 @@
 {% extends 'layout.html' %}
+<style>
+    .navbarStyle .navbar-nav li:nth-child(2) a.nav-link::before {
+        visibility: visible;
+        width: 80%;
+        opacity: 1;
+    } /* Make this work */
+</style>
 {% block title %}About{% endblock %}
 {% block content %}
 
