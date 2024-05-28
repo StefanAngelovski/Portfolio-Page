@@ -18,6 +18,7 @@
 
 
     #mainText h2{
+        color: white;
         font-weight: bold;
     }
 
@@ -26,18 +27,18 @@
     }
 
     #fancyButton, #mainText{
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     #background{
-        height: 80%;
+        height: 40rem;
         background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
         background-size: cover;
     }
 
     #centerSection{
         background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center top;
-        height: 50%;
+        height: 30rem;
     }
 
     .navbarStyle .navbar-nav li:first-child a.nav-link::before {
@@ -149,37 +150,44 @@
 
 {% block content %}
 <div class="row">
-    <div class="col" id="secondTitle">
+    <div class="col col-lg-5 col-md-12 mb-5" id="secondTitle">
         <span>MY SERVICES</span>
         <h2 class="pb-3">WHAT I DO?</h2>
         <p class="pb-5 py-3" style="color: silver">If you hire a videographer of our team you will get a video professional
         to make a custom video for your business card and, once the project is over.</p>
         <a id="fancyButton" href="{% url 'mainApp:index' %}" >VIEW ALL SERVICES</a>
     </div>
+    <div class="col col-lg-7 col-md-12">
+        <div class="row">
+            <div class="pb-4 col col-lg-6 col-md-12 col-sm-6">
+                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-1.png.webp" alt="Image">
+                <h3 class="text-white">Motion graphics</h3>
+                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+            </div>
 
-    <div class="col">
-        <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-1.png.webp" alt="Image">
-        <h2>Motion graphics</h2>
-        <p>Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+            <div class="pb-4 col col-lg-6 col-md-12 col-sm-6">
+                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-3.png.webp" alt="Image">
+                <h3 class="text-white">Video distribution</h3>
+                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+            </div>
 
-        <img class="mb-4 spinningSquare my-5" src="https://preview.colorlib.com/theme/videograph/img/icons/si-3.png.webp" alt="Image">
-        <h2>Video distribution</h2>
-        <p>Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
-    </div>
+            <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6">
+                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-2.png.webp" alt="Image">
+                <h3 class="text-white">Scriptwriting and editing</h3>
+                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+            </div>
 
-    <div class="col">
-        <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-2.png.webp" alt="Image">
-        <h2>Scriptwriting and editing</h2>
-        <p>Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
-
-        <img class="mb-4 spinningSquare my-5" src="https://preview.colorlib.com/theme/videograph/img/icons/si-4.png.webp" alt="Image">
-        <h2>Video hosting</h2>
-        <p>Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+            <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6">
+                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-4.png.webp" alt="Image">
+                <h3 class="text-white">Video hosting</h3>
+                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
 {% block centerSection %}
-<div id="centerSection" class="my-2">
+<div id="centerSection">
     <div class="container" style="max-width: 75%">
         <div class="row">
             <div class="col col-md-6" id="mainText">
