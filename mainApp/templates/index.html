@@ -36,15 +36,15 @@
 
     #background{
         height: 40rem;
-        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
         background-size: cover;
     }
 
 
     #centerSection{
         background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
-        background-size: cover;
-        height: 30rem;
+        background-size: 100% auto;
+        height: 50vh;
     }
 
     .rulerSection{
@@ -82,20 +82,9 @@
         transform-origin: bottom right;
     }
 
-
     /* Responsive height adjustment for smaller screens */
     @media (max-width: 768px) {
         #background {
-            height: 50vh; /* Adjust the height based on viewport height for mobile devices */
-        }
-
-        #mobileBackground{
-            background-color: rgb(16, 0, 40);
-            width: 95%;
-            z-index: 9999;
-        }
-
-        #centerSection {
             height: 50vh; /* Adjust the height based on viewport height for mobile devices */
         }
 
@@ -162,19 +151,6 @@
     .spinningSquare:hover {
         transform: rotate(50deg);
     }
-
-
-
-
-
-    #centerSectionButton, #centerSectionButton:hover{
-        text-decoration: none;
-        color: white;
-        background-color: rgb(0, 153, 185);
-        font-family: 'Play', sans-serif;
-        padding: 2%;
-    }
-
 </style>
 {% extends 'layout.html' %}
 {% block title %}Portfolio{% endblock %}
@@ -183,7 +159,7 @@
     <div class="col col-md-6" id="mainText">
         <span style="font-size: 20px;">COMPUTER SCIENCE ENGINEER</span>
         <h2 class="display-3 pb-5 py-3">Hello, I'm Stefan Angelovski</h2>
-        <a id="fancyButton" href="{% url 'mainApp:index' %}">SEE MORE ABOUT ME</a>
+        <a id="fancyButton" href="#aboutMe">SEE MORE ABOUT ME</a>
     </div>
 </div>
 {% endblock %}
@@ -235,10 +211,75 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-6" id="mainText">
-                <span>FOR WEBSITE AND VIDEO EDITING</span>
-                <h2 class="display-3 pb-5 py-3">MY PROJECTS</h2>
+                <h2 class="display-3 my-3 justify-content-center">MY PROJECTS</h2>
             </div>
         </div>
     </div>
 </div>
+<div>
+    <div class="container">
+        <div class="owl-filter">
+            <div class="filter-menu">
+                <ul>
+                    <li data-filter="*">All</li>
+                    <li data-filter=".webDev">Web Dev</li>
+                </ul>
+            </div>
+        <div class="filter-item">
+            <div class="item webDev">
+                <div class="card">
+                    <h1>Django Portfolio Website</h1>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="item webDev">
+                <div class="card">
+                    <h1>React app</h1>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="item androidApps">
+                <div class="card">
+                    <h1>Android app</h1>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="item robotics">
+                <div class="card">
+                    <h1>Robotic arm</h1>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <h1>Powershell work</h1>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+</script>
 {% endblock %}
+
