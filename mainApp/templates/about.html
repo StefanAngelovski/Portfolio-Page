@@ -1,12 +1,19 @@
 {% extends 'layout.html' %}
+
 <style>
     .navbarStyle .navbar-nav li:nth-child(2) a.nav-link::before {
         visibility: visible;
         width: 80%;
         opacity: 1;
     } /* Make this work */
+
+    #background{
+        height: 40rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/breadcrumb-bg.jpg.webp') no-repeat center top;
+        background-size: cover;
+    }
 </style>
 {% block title %}About{% endblock %}
-{% block content %}
-
+{% block backgroundContent %}
+<h1>Example text</h1>
 {% endblock %}

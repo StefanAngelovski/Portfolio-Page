@@ -14,6 +14,7 @@
 
     #mainText{
         animation: jump-combo 1s ease-in-out alternate; /* Combined animation */
+        padding-top: 10%;
     }
 
 
@@ -22,12 +23,15 @@
         font-weight: bold;
     }
 
-    #mainText{
-        padding-top: 10%;
-    }
 
     #fancyButton, #mainText{
         font-size: 1rem;
+        color: white;
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
 
     #background{
@@ -36,18 +40,16 @@
         background-size: cover;
     }
 
+
     #centerSection{
-        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center top;
+        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
+        background-size: cover;
         height: 30rem;
     }
 
-    .navbarStyle .navbar-nav li:first-child a.nav-link::before {
-        visibility: visible;
-        width: 80%;
-        opacity: 1;
+    .rulerSection{
+        opacity: 0;
     }
-
-
 
 
     #fancyButton::before, #fancyButton::after{
@@ -79,6 +81,44 @@
         border-right: 2px solid cyan;
         transform-origin: bottom right;
     }
+
+
+    /* Responsive height adjustment for smaller screens */
+    @media (max-width: 768px) {
+        #background {
+            height: 50vh; /* Adjust the height based on viewport height for mobile devices */
+        }
+
+        #mobileBackground{
+            background-color: rgb(16, 0, 40);
+            width: 95%;
+            z-index: 9999;
+        }
+
+        #centerSection {
+            height: 50vh; /* Adjust the height based on viewport height for mobile devices */
+        }
+
+        .rulerSection{
+            color: white;
+            opacity: 1;
+        }
+
+         #fancyButton::before, #fancyButton::after{
+            width: 100%;
+            height: 100%;
+            transform: scaleX(1) scaleY(1);
+        }
+    }
+
+
+    .navbarStyle .navbar-nav li:first-child a.nav-link::before {
+        visibility: visible;
+        width: 80%;
+        opacity: 1;
+    }
+
+
 
 
 
@@ -141,8 +181,8 @@
 {% block backgroundContent %}
 <div class="row">
     <div class="col col-md-6" id="mainText">
-        <span>FOR WEBSITE AND VIDEO EDITING</span>
-        <h2 class="display-3 pb-5 py-3">PROGRAMMER'S PORTFOLIO</h2>
+        <span style="font-size: 20px;">COMPUTER SCIENCE ENGINEER</span>
+        <h2 class="display-3 pb-5 py-3">Hello, I'm Stefan Angelovski</h2>
         <a id="fancyButton" href="{% url 'mainApp:index' %}">SEE MORE ABOUT ME</a>
     </div>
 </div>
@@ -150,7 +190,7 @@
 
 {% block content %}
 <div class="row">
-    <div class="col col-lg-5 col-md-12 mb-5" id="secondTitle">
+    <div class="col col-lg-4 col-md-12 mb-5 col-12" id="secondTitle">
         <span>MY SERVICES</span>
         <h2 class="pb-3">WHAT I DO?</h2>
         <p class="pb-5 py-3" style="color: silver">If you hire a videographer of our team you will get a video professional
@@ -159,28 +199,32 @@
     </div>
     <div class="col col-lg-7 col-md-12">
         <div class="row">
-            <div class="pb-4 col col-lg-6 col-md-12 col-sm-6">
+            <div class="pb-4 col col-lg-6 col-md-12 col-sm-6 col-12">
                 <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-1.png.webp" alt="Image">
                 <h3 class="text-white">Motion graphics</h3>
                 <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <hr class="rulerSection">
             </div>
 
-            <div class="pb-4 col col-lg-6 col-md-12 col-sm-6">
+            <div class="pb-4 col col-lg-6 col-md-10 col-sm-6 col-12">
                 <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-3.png.webp" alt="Image">
                 <h3 class="text-white">Video distribution</h3>
                 <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <hr class="rulerSection">
             </div>
 
-            <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6">
+            <div class="pb-4 col col-lg-6 col-md-12 col-sm-6 col-12">
                 <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-2.png.webp" alt="Image">
                 <h3 class="text-white">Scriptwriting and editing</h3>
                 <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <hr class="rulerSection">
             </div>
 
-            <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6">
+            <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6 col-12">
                 <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-4.png.webp" alt="Image">
                 <h3 class="text-white">Video hosting</h3>
                 <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <hr class="rulerSection">
             </div>
         </div>
     </div>
@@ -188,12 +232,11 @@
 {% endblock %}
 {% block centerSection %}
 <div id="centerSection">
-    <div class="container" style="max-width: 75%">
+    <div class="container">
         <div class="row">
             <div class="col col-md-6" id="mainText">
                 <span>FOR WEBSITE AND VIDEO EDITING</span>
-                <h2 class="display-3 pb-5 py-3">PROGRAMMER'S PORTFOLIO</h2>
-                <a id="fancyButton" href="{% url 'mainApp:index' %}">SEE MORE ABOUT ME</a>
+                <h2 class="display-3 pb-5 py-3">MY PROJECTS</h2>
             </div>
         </div>
     </div>
