@@ -97,7 +97,16 @@
     }
 
     #carouselPart{
-        height: 50vh;
+        height: 60vh;
+    }
+
+    #carouselPart .card{
+        height: 80%;
+    }
+
+    .card{
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
 
 
@@ -120,9 +129,6 @@
             opacity: 1;
         }
 
-        #carouselPart{
-            height: 50vh;
-        }
 
         #fancyButton::before, #fancyButton::after{
             width: 100%;
@@ -285,7 +291,7 @@
         </div>
     </div>
 </div>
-<div class="container py-5">
+<div class="container">
     <div class="owl-carousel owl-theme" id="carouselPart">
         <div class="item">
             <div class="card">
@@ -333,6 +339,7 @@
             </div>
         </div>
     </div>
+</div>
 <script>
     $('.owl-carousel').owlCarousel({
         loop:true,
