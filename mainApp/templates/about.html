@@ -1,18 +1,117 @@
-{% extends 'layout.html' %}
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <style>
-    .navbarStyle .navbar-nav li:nth-child(2) a.nav-link::before {
-        visibility: visible;
-        width: 80%;
-        opacity: 1;
-    } /* Make this work */
+    body {
+	margin: 0;
+	padding: 0;
+	background: #0a69ed;
+}
+.carousel{
+    height: 600px;
+    perspective: 250px;
 
-    #background{
-        height: 40rem;
-        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/breadcrumb-bg.jpg.webp') no-repeat center top;
-        background-size: cover;
-    }
+}
+.carousel .carousel-item {
+	width: 450px;
+	background: #fff;
+	padding: 50px;
+	height: auto;
+	text-align: center;
+    border-radius: 15px;
+}
+.card-img-top {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 50%;
+	border: inset 8px deepskyblue;
+}
+        .card-img-top img{
+            width: 100%;
+        }
+        .testi p {
+	color: #262626;
+	font-size: 18px;
+	line-height: 1.9;
+}
+        .testi h4 {
+	font-size: 20px;
+	margin: 0;
+	color: #000;
+}
+        .testi h5 {
+	font-size: 14px;
+	letter-spacing: 5px;
+	margin: 7px 0;
+}
+
 </style>
 {% block title %}About{% endblock %}
 {% block backgroundContent %}
+    <div class="carousel">
+        <div class="carousel-item">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png"  alt="IMG">
+                <div class="p-2">
+                    <h5 class="card-title">Portfolio Website</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>React app</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Android app</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Robotic arm</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Powershell work</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+   </div>
+
 {% endblock %}
+
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+			padding: 200
+	});
+	autoplay();
+	function autoplay() {
+		$('.carousel').carousel('next');
+		setTimeout(autoplay, 4500);
+	}
+  });
+</script>

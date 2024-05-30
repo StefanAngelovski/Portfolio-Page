@@ -14,7 +14,6 @@
 
     #mainText{
         animation: jump-combo 1s ease-in-out alternate; /* Combined animation */
-        padding-top: 10%;
     }
 
 
@@ -28,10 +27,14 @@
         font-size: 1rem;
         color: white;
         text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+    }
+
+    #fancyButton{
+        background-color: rgba(0, 0, 0, 0.3);
     }
 
     #background{
@@ -43,8 +46,19 @@
 
     #centerSection{
         background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
-        background-size: 100% auto;
+        background-size: cover;
         height: 50vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    #verticalCenter{
+        display: flex;
+        align-items: center;
+        position: relative;
     }
 
     .rulerSection{
@@ -82,10 +96,23 @@
         transform-origin: bottom right;
     }
 
+    #carouselPart{
+        height: 50vh;
+    }
+
+
     /* Responsive height adjustment for smaller screens */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
         #background {
             height: 50vh; /* Adjust the height based on viewport height for mobile devices */
+        }
+
+        .circle{
+            display: none;
+        }
+
+        #centerSection{
+            height: 20vh;
         }
 
         .rulerSection{
@@ -93,22 +120,25 @@
             opacity: 1;
         }
 
-         #fancyButton::before, #fancyButton::after{
+        #carouselPart{
+            height: 50vh;
+        }
+
+        #fancyButton::before, #fancyButton::after{
             width: 100%;
             height: 100%;
             transform: scaleX(1) scaleY(1);
         }
     }
 
-
-    .navbarStyle .navbar-nav li:first-child a.nav-link::before {
-        visibility: visible;
-        width: 80%;
-        opacity: 1;
+    .card-img-top {
+        object-fit: cover;
+        height: 55%;
     }
 
-
-
+    .checkMark{
+        color: cyan;
+    }
 
 
     #secondTitle h2{
@@ -137,28 +167,38 @@
 
 
 
-
-
-
-    .spinningSquare{
-        padding: 15px;
-        bottom: 0;
-        right: 0;
-        border: 2px solid cyan; /* Add a border to the image */
-        transition: transform 0.5s ease-in-out; /* Smooth transition for the rotation */
+    .spinningSquareWrapper {
+        position: relative;
+        display: inline-block;
     }
 
-    .spinningSquare:hover {
+    .spinningSquareWrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid cyan; /* Border applied to the pseudo-element */
+        transition: transform 0.5s ease-in-out; /* Smooth transition for the rotation */
+        box-sizing: border-box; /* Ensure the border is included in the element's dimensions */
+    }
+
+    .spinningSquareWrapper:hover::before {
         transform: rotate(50deg);
+    }
+
+    .spinningSquare {
+        display: block; /* Ensure the image is a block element */
     }
 </style>
 {% extends 'layout.html' %}
 {% block title %}Portfolio{% endblock %}
 {% block backgroundContent %}
 <div class="row">
-    <div class="col col-md-6" id="mainText">
-        <span style="font-size: 20px;">COMPUTER SCIENCE ENGINEER</span>
-        <h2 class="display-3 pb-5 py-3">Hello, I'm Stefan Angelovski</h2>
+    <div class="col col-md-8" id="mainText" style="padding-top: 10%">
+        <span class="display-9">COMPUTER SCIENCE ENGINEER</span>
+        <h2 class="display-3 pb-5 py-3">Hello,<br> I'm Stefan Angelovski</h2>
         <a id="fancyButton" href="#aboutMe">SEE MORE ABOUT ME</a>
     </div>
 </div>
@@ -168,38 +208,67 @@
 <div class="row">
     <div class="col col-lg-4 col-md-12 mb-5 col-12" id="secondTitle">
         <span>MY SERVICES</span>
-        <h2 class="pb-3">WHAT I DO?</h2>
-        <p class="pb-5 py-3" style="color: silver">If you hire a videographer of our team you will get a video professional
-        to make a custom video for your business card and, once the project is over.</p>
+        <h2 class="pb-3">WHAT DO I DO?</h2>
+        <p class="pb-5 py-3" style="color: silver">I am a versatile software engineer passionate about creating websites and building robots.
+            As a dedicated tinkerer, I thrive on solving complex problems and bringing ideas to life
+            through technology.</p>
         <a id="fancyButton" href="{% url 'mainApp:index' %}" >VIEW ALL SERVICES</a>
+        <br>
+        <ul class="pt-5" style="list-style: none; padding-left: 0">
+            <li >
+                <i class="fa fa-check checkMark"></i>
+                <span style="font-size: 15px; ">Proficient in English <br></span>
+            </li>
+            <li class="py-2">
+                <i class="fa fa-check checkMark"></i>
+                <span style="font-size: 15px">Highly determined <br></span>
+            </li>
+            <li>
+                <i class="fa fa-check checkMark"></i>
+                <span style="font-size: 15px">Easily adaptable <br></span>
+            </li>
+            <li class="pt-2">
+                <i class="fa fa-check checkMark"></i>
+                <span style="font-size: 15px">Welcomes challenges <br></span>
+            </li>
+        </ul>
     </div>
     <div class="col col-lg-7 col-md-12">
         <div class="row">
             <div class="pb-4 col col-lg-6 col-md-12 col-sm-6 col-12">
-                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-1.png.webp" alt="Image">
-                <h3 class="text-white">Motion graphics</h3>
-                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057807/Background%20media/logos/sc3lnegjreu6b3yxnujd.ico" alt="Image"></span>
+                <h3 class="text-white">Websites</h3>
+                <p style="color: silver">
+                    I handle both front and back-end development, crafting user-friendly websites. My focus is on simple,
+                    functional designs that elevate user experiences and support business growth.</p>
                 <hr class="rulerSection">
             </div>
 
             <div class="pb-4 col col-lg-6 col-md-10 col-sm-6 col-12">
-                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-3.png.webp" alt="Image">
-                <h3 class="text-white">Video distribution</h3>
-                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057808/Background%20media/logos/b9d4t2fp7gesam97r3pq.ico" alt="Image"></span>
+                <h3 class="text-white">Mobile Apps</h3>
+                <p style="color: silver">I showcase expertise in developing intuitive and functional applications for various platforms.
+                    With a focus on user-friendly interfaces and robust features, I specialize in creating high-quality
+                    mobile experiences that meet diverse needs.</p>
                 <hr class="rulerSection">
             </div>
 
             <div class="pb-4 col col-lg-6 col-md-12 col-sm-6 col-12">
-                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-2.png.webp" alt="Image">
-                <h3 class="text-white">Scriptwriting and editing</h3>
-                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057808/Background%20media/logos/k6z3agimuezkquyeo32v.ico" alt="Image"></span>
+                <h3 class="text-white">Electronics</h3>
+                <p style="color: silver">I have proficiency in designing and building electronic systems.
+                    From circuitry to embedded systems, I specialize in creating innovative solutions that blend
+                    functionality with creativity. My projects showcase a passion for tinkering and a commitment
+                    to pushing the boundaries of electronic engineering.</p>
                 <hr class="rulerSection">
             </div>
 
             <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6 col-12">
-                <img class="mb-4 spinningSquare" src="https://preview.colorlib.com/theme/videograph/img/icons/si-4.png.webp" alt="Image">
-                <h3 class="text-white">Video hosting</h3>
-                <p style="color: silver">Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.</p>
+                <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057807/Background%20media/logos/l5l2hggifslwdwkscfhc.ico" alt="Image"></span>
+                <h3 class="text-white">Game Dev</h3>
+                <p style="color: silver">I dive into my love for crafting captivating gaming experiences. From brainstorming exciting gameplay
+                    ideas to bringing characters to life, I'm all about creating fun and immersive adventures. Let's
+                    explore the worlds I've built and the excitement waiting to be unleashed!</p>
                 <hr class="rulerSection">
             </div>
         </div>
@@ -210,73 +279,78 @@
 <div id="centerSection">
     <div class="container">
         <div class="row">
-            <div class="col col-md-6" id="mainText">
-                <h2 class="display-3 my-3 justify-content-center">MY PROJECTS</h2>
+            <div class="col col-md-7" id="verticalCenter">
+                <span id="mainText"><h2 class="display-3">MY PROJECTS</h2></span>
             </div>
         </div>
     </div>
 </div>
-<div>
-    <div class="container">
-        <div class="owl-filter">
-            <div class="filter-menu">
-                <ul>
-                    <li data-filter="*">All</li>
-                    <li data-filter=".webDev">Web Dev</li>
-                </ul>
-            </div>
-        <div class="filter-item">
-            <div class="item webDev">
-                <div class="card">
-                    <h1>Django Portfolio Website</h1>
+<div class="container py-5">
+    <div class="owl-carousel owl-theme" id="carouselPart">
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png"  alt="IMG">
+                <div class="p-2">
+                    <h5 class="card-title">Portfolio Website</h5>
                     <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
-            <div class="item webDev">
-                <div class="card">
-                    <h1>React app</h1>
+        </div>
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>React app</h5>
                     <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
-            <div class="item androidApps">
-                <div class="card">
-                    <h1>Android app</h1>
+        </div>
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Android app</h5>
                     <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
-            <div class="item robotics">
-                <div class="card">
-                    <h1>Robotic arm</h1>
+        </div>
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Robotic arm</h5>
                     <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
-            <div class="item">
-                <div class="card">
-                    <h1>Powershell work</h1>
+        </div>
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Powershell work</h5>
                     <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
-            </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
 <script>
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
         nav:true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        autoplayTimeout:7000,
+        autoplayHoverPause:false,
         responsive:{
             0:{
                 items:1
             },
             600:{
-                items:3
+                items:2
             },
             1000:{
-                items:5
+                items:4
             }
         }
     })
