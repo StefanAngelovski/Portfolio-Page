@@ -53,7 +53,9 @@
             background-color: blue;
         }
 
-
+        .nav-link:focus{
+            color: inherit;
+        }
 
         .navbarStyle a::before {
             content: '';
@@ -139,6 +141,8 @@
         border-radius: 50%;
         background-color: rgb(35, 27, 48);
         margin-left: 10px;
+        position: relative;
+        z-index: 2;
     }
 
     .contactIconsBelow li a:hover{
@@ -170,6 +174,7 @@
         color: white;
         font-family: 'Play', sans-serif;
     }
+
 
     .circle {
       height: 20px;
@@ -264,18 +269,32 @@
         circle.style.opacity = 0;
       });
     }
-
     requestAnimationFrame(animateCircles);
   }
   setTimeout(animateCircles, 1000);
 </script>
 
+<!-- To remove the # from url-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.scroll-link').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
 
 <body style="background-color: rgb(16, 0, 40)">
-    <section id="background" >
+    <section id="background">
         <div class="container">
             <nav class="navbar navbar-expand-lg" id="mobileBackground">
-                <a class="navbar-brand py-3 pl-5" style="padding-left: 2%;" id="portfolioBrand" href="#">
+                <a class="navbar-brand py-3 pl-5" style="padding-left: 2%;" id="portfolioBrand" href="">
                     <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
                     PORTFOLIO
                 </a>
@@ -283,16 +302,16 @@
                 <div class="navbarStyle collapse navbar-collapse justify-content-center" id="centerNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#secondTitle">ABOUT</a>
+                            <a class="nav-link scroll-link" data-target="secondTitle" href="">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#centerSection">PORTFOLIO</a>
+                            <a class="nav-link scroll-link" data-target="centerSection" href="">PORTFOLIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">PAGES</a>
+                            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#technologies">TECH</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">CONTACT</a>
+                            <a class="nav-link scroll-link" data-target="contact" href="">CONTACT</a>
                         </li>
                     </ul>
                 </div>
@@ -339,7 +358,7 @@
                         </a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="https://www.linkedin.com/in/stefan-angelovski-43181a19a/">
                             <i class="fa fa fa-linkedin"></i>
                         </a>
                      </li>
@@ -371,7 +390,7 @@
         <div class="container">
             <footer class="pb-3">
                 <nav class="navbar navbar-expand-md">
-                    <a class="navbar-brand pt-3" id="portfolioBrand" href="#">
+                    <a class="navbar-brand pt-3" id="portfolioBrand" href="" style="position: relative; z-index: 2;">
                         <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
                         PORTFOLIO
                     </a>
@@ -388,17 +407,17 @@
                             </a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="https://www.linkedin.com/in/stefan-angelovski-43181a19a/">
                                 <i class="fa fa fa-linkedin"></i>
                             </a>
                          </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="https://www.instagram.com/stefanangelovski_/">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="https://www.youtube.com/channel/UClftk6hWK8ajNf3TY2xTxuQ">
                                 <i class="fa fa-youtube-play"></i>
                             </a>
                         </li>
@@ -413,7 +432,7 @@
                         <span>City: Skopje<br></span>
                         <span style="padding-bottom: 50px">Residence: Macedonia<br></span>
                         <br>
-                        <a href="#" class="text-white" style="text-decoration: none">Read more &#8594</a>
+                        <a href="" class="text-white" style="text-decoration: none">Read more &#8594</a>
                     </div>
 
 

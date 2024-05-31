@@ -66,9 +66,10 @@
     }
 
     .modal-content{
-        background: linear-gradient(135deg, rgba(16, 0, 40, 0.7), rgba(0, 255, 255, 0.5));
+        background: linear-gradient(135deg, rgba(16, 0, 40, 1), rgba(0, 255, 255, 1));
         backdrop-filter: blur(10px);
     }
+
 
     .modal-content h4, .modal-content p, .modal-content h6{
         font-family: 'Play', sans-serif;
@@ -79,6 +80,15 @@
         font-size: 1.8vh;
         padding-top: 5%;
     }
+    .modal-body{
+        scrollbar-width: thin;
+        scrollbar-color: purple transparent;
+    }
+
+    .modal-body img{
+        filter: invert(100%);
+    }
+
 
     #fancyButton::before, #fancyButton::after{
         content: '';
@@ -128,6 +138,11 @@
     @media (max-width: 600px) {
         #background {
             height: 50vh; /* Adjust the height based on viewport height for mobile devices */
+        }
+
+        .card{
+            margin-top: 5vh;
+            margin-bottom: -4.5vh;
         }
 
         .circle{
@@ -225,7 +240,7 @@
     <div class="col col-md-8" id="mainText" style="padding-top: 10%">
         <span class="display-9">COMPUTER SCIENCE ENGINEER</span>
         <h2 class="display-3 pb-5 py-3">Hello,<br> I'm Stefan Angelovski</h2>
-        <a id="fancyButton" href="#aboutMe">SEE MORE ABOUT ME</a>
+        <a id="fancyButton" class="scroll-link" data-target="secondTitle" href="">SEE MORE ABOUT ME</a>
     </div>
 </div>
 {% endblock %}
@@ -367,78 +382,89 @@
                 </div>
             </div>
         </div>
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png" alt="IMG">
+                <div class="p-2">
+                    <h5>ARK Threadripper Launcher</h5>
+                    <p>A launcher for a Server in a game called ARK Survival Evolved</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="modal fade" id="technologies" tabindex="1" aria-labelledby="technologiesLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-dialog modal-l modal-dialog-scrollable">
         <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-white" id="technologiesLabel">Technologies</h5>
+            <div class="modal-header container">
+              <h5 class="modal-title text-white" id="technologiesLabel" style="font-family: 'Play', sans-serif">Technologies</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body container">
                 <h4 class="mb-3">Web Development</h4>
                 <div class="row mb-3">
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/zvv1lmjrlqg8dlpd4xml.svg" class="img-fluid" alt="HTML Logo">
-                      <h6 class="text-center">HTML</h6>
+                      <h6>HTML</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/kcsv0rayvd3z3qsnj0j1.svg" class="img-fluid" alt="CSS Logo">
-                        <h6 class="text-center">CSS</h6>
+                        <h6>CSS</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/aysjcs6o8wjak67in1zi.svg" class="img-fluid" alt="Bootstrap Logo">
-                        <h6 class="text-center">Bootstrap</h6>
+                        <h6>Bootstrap</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/vwviwtiiay3e2bjgxwru.svg" class="img-fluid" alt="Django Logo">
-                        <h6 class="text-center">Django</h6>
+                        <h6>Django</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/cwmc0kkyxwfvnchrfjbm.svg" class="img-fluid" alt="React Logo">
-                        <h6 class="text-center">React</h6>
+                        <h6>React</h6>
                     </div>
                 </div>
                 <h4 class="mb-3">Programming Languages</h4>
                 <div class="row mb-3">
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148808/Background%20media/logos/escakdsh4mzdxfd4lnny.png" class="img-fluid" alt="C Logo">
                         <h6 class="text-center">C</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148664/Background%20media/logos/n2ldt82nl9e3vsqeb722.png" class="img-fluid" alt="C++ Logo">
                       <h6 class="text-center">C++</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148602/Background%20media/logos/ppi4huc7gyewje11nuwe.svg" class="img-fluid" alt="Java Logo">
                       <h6 class="text-center">Java</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/g5w9iyvkzbabfevxe8sy.svg" class="img-fluid" alt="JavaScript Logo">
                       <h6 class="text-center">JavaScript</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-2 col-2 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/ydbszjgfjryctt9jwbwg.svg" class="img-fluid" alt="Python Logo">
                       <h6 class="text-center">Python</h6>
                     </div>
                 </div>
                 <h4 class="mb-3">IDEs Used</h4>
-                <div class="row mb-3">
-                    <div class="col-md-2 col-2">
+                <div class="row">
+                <div class="row col col-md-8 col-8 mb-3">
+                    <div class="col-md-3 col-3 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg" class="img-fluid" alt="Arduino Logo">
-                      <h6 class="text-center">Arduino</h6>
+                      <h6>Arduino</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-3 col-3 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/uixjadj72rx3e6ozlbxd.svg" class="img-fluid" alt="IntelliJ Idea Logo">
-                      <h6 class="text-center">IntelliJ Idea</h6>
+                      <h6>IntelliJ Idea</h6>
                     </div>
-                    <div class="col-md-2 col-2">
+                    <div class="col-md-3 col-3 text-center mx-auto">
                       <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717151590/Background%20media/logos/yufy2xjiuseala5lcywc.svg" class="img-fluid" alt="IntelliJ Idea Logo">
-                      <h6 class="text-center">Unity</h6>
+                      <h6>Unity</h6>
                     </div>
                 </div>
+                    </div>
                 <h4 class="mb-3">Other Skills</h4>
                 <ul style="list-style: none; padding-left: 0; color: white; font-family: 'Play', sans-serif">
                     <li >
