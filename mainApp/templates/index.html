@@ -65,6 +65,20 @@
         opacity: 0;
     }
 
+    .modal-content{
+        background: linear-gradient(135deg, rgba(16, 0, 40, 0.7), rgba(0, 255, 255, 0.5));
+        backdrop-filter: blur(10px);
+    }
+
+    .modal-content h4, .modal-content p, .modal-content h6{
+        font-family: 'Play', sans-serif;
+        color: ghostwhite;
+    }
+
+    .modal-content h6{
+        font-size: 1.8vh;
+        padding-top: 5%;
+    }
 
     #fancyButton::before, #fancyButton::after{
         content: '';
@@ -171,6 +185,10 @@
         content: "";
     }
 
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: cyan transparent;
+    }
 
 
     .spinningSquareWrapper {
@@ -198,6 +216,8 @@
         display: block; /* Ensure the image is a block element */
     }
 </style>
+
+
 {% extends 'layout.html' %}
 {% block title %}Portfolio{% endblock %}
 {% block backgroundContent %}
@@ -218,7 +238,7 @@
         <p class="pb-5 py-3" style="color: silver">I am a versatile software engineer passionate about creating websites and building robots.
             As a dedicated tinkerer, I thrive on solving complex problems and bringing ideas to life
             through technology.</p>
-        <a id="fancyButton" href="{% url 'mainApp:index' %}" >VIEW ALL SERVICES</a>
+        <a id="fancyButton" href="" data-bs-toggle="modal" data-bs-target="#technologies">VIEW ALL TECHNOLOGIES</a>
         <br>
         <ul class="pt-5" style="list-style: none; padding-left: 0">
             <li >
@@ -338,12 +358,110 @@
                 </div>
             </div>
         </div>
+        <div class="item">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Bluetooth Speaker</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="technologies" tabindex="1" aria-labelledby="technologiesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-white" id="technologiesLabel">Technologies</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="mb-3">Web Development</h4>
+                <div class="row mb-3">
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/zvv1lmjrlqg8dlpd4xml.svg" class="img-fluid" alt="HTML Logo">
+                      <h6 class="text-center">HTML</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/kcsv0rayvd3z3qsnj0j1.svg" class="img-fluid" alt="CSS Logo">
+                        <h6 class="text-center">CSS</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/aysjcs6o8wjak67in1zi.svg" class="img-fluid" alt="Bootstrap Logo">
+                        <h6 class="text-center">Bootstrap</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/vwviwtiiay3e2bjgxwru.svg" class="img-fluid" alt="Django Logo">
+                        <h6 class="text-center">Django</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/cwmc0kkyxwfvnchrfjbm.svg" class="img-fluid" alt="React Logo">
+                        <h6 class="text-center">React</h6>
+                    </div>
+                </div>
+                <h4 class="mb-3">Programming Languages</h4>
+                <div class="row mb-3">
+                    <div class="col-md-2 col-2">
+                        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148808/Background%20media/logos/escakdsh4mzdxfd4lnny.png" class="img-fluid" alt="C Logo">
+                        <h6 class="text-center">C</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148664/Background%20media/logos/n2ldt82nl9e3vsqeb722.png" class="img-fluid" alt="C++ Logo">
+                      <h6 class="text-center">C++</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148602/Background%20media/logos/ppi4huc7gyewje11nuwe.svg" class="img-fluid" alt="Java Logo">
+                      <h6 class="text-center">Java</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/g5w9iyvkzbabfevxe8sy.svg" class="img-fluid" alt="JavaScript Logo">
+                      <h6 class="text-center">JavaScript</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/ydbszjgfjryctt9jwbwg.svg" class="img-fluid" alt="Python Logo">
+                      <h6 class="text-center">Python</h6>
+                    </div>
+                </div>
+                <h4 class="mb-3">IDEs Used</h4>
+                <div class="row mb-3">
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg" class="img-fluid" alt="Arduino Logo">
+                      <h6 class="text-center">Arduino</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/uixjadj72rx3e6ozlbxd.svg" class="img-fluid" alt="IntelliJ Idea Logo">
+                      <h6 class="text-center">IntelliJ Idea</h6>
+                    </div>
+                    <div class="col-md-2 col-2">
+                      <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717151590/Background%20media/logos/yufy2xjiuseala5lcywc.svg" class="img-fluid" alt="IntelliJ Idea Logo">
+                      <h6 class="text-center">Unity</h6>
+                    </div>
+                </div>
+                <h4 class="mb-3">Other Skills</h4>
+                <ul style="list-style: none; padding-left: 0; color: white; font-family: 'Play', sans-serif">
+                    <li >
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px; ">Knowledge of electronics, computer hardware and architecture, virtual machines and Github.<br></span>
+                    </li>
+                    <li class="py-2">
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px">Understanding of Android and Windows operating systems, as well as Microsoft 365 applications. <br></span>
+                    </li>
+                    <li>
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px">Experience with UI/UX design using Paint.net. <br></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 <script>
     $('.owl-carousel').owlCarousel({
         loop:true,
-        margin:10,
+        margin:15,
         nav:true,
         autoplay: true,
         autoplaySpeed: 3000,
