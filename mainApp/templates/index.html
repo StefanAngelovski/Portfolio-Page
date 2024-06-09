@@ -230,6 +230,15 @@
     .spinningSquare {
         display: block; /* Ensure the image is a block element */
     }
+
+    .active {
+      color: red;
+    }
+
+    .hide {
+      display: none;
+    }
+
 </style>
 
 
@@ -327,8 +336,14 @@
     </div>
 </div>
 <div class="container">
+    <div id="project-terms"> <a id="all" class="active" href="#">ALL</a>
+      <a id="WebDev" href="#">Web Dev</a>
+      <a id="Electronics" href="#">Electronics</a>
+      <a id="Mobile" href="#">Mobile</a>
+      <a id="Software" href="#">Software</a>
+    </div>
     <div class="owl-carousel owl-theme" id="carouselPart">
-        <div class="item">
+        <div class="item project WebDev">
             <div class="card">
                 <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png"  alt="IMG">
                 <div class="p-2">
@@ -337,7 +352,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item project WebDev">
             <div class="card">
                 <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
                 <div class="p-2">
@@ -346,7 +361,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item project Mobile">
             <div class="card">
                 <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
                 <div class="p-2">
@@ -355,7 +370,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item project Electronics">
             <div class="card">
                 <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
                 <div class="p-2">
@@ -364,16 +379,16 @@
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item project WebDev">
             <div class="card">
                 <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
                 <div class="p-2">
-                    <h5>Powershell work</h5>
+                    <h5>Springboot app</h5>
                     <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item project Electronics">
             <div class="card">
                 <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
                 <div class="p-2">
@@ -382,7 +397,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item project Software">
             <div class="card">
                 <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png" alt="IMG">
                 <div class="p-2">
@@ -392,8 +407,8 @@
             </div>
         </div>
     </div>
+    <div id="projects-copy" class="hide"></div>
 </div>
-
 <div class="modal fade" id="technologies" tabindex="1" aria-labelledby="technologiesLabel" aria-hidden="true">
     <div class="modal-dialog modal-l modal-dialog-scrollable">
         <div class="modal-content">
@@ -486,7 +501,7 @@
 </div>
 <script>
     $('.owl-carousel').owlCarousel({
-        loop:true,
+        loop:false,
         margin:15,
         nav:true,
         autoplay: true,
@@ -505,6 +520,47 @@
             }
         }
     })
+</script>
+
+<script>
+    $(document).ready(function() {
+      var options = {
+        navigation: true,
+        pagination: true
+      };
+      $("#carouselPart").owlCarousel(options)
+      function showProjectsbyCat(cat) {
+        var owl = $("#carouselPart").data('owl.carousel');
+
+        var nb = owl.items().length;
+        console.log(nb)
+        for (var i = 0; i < nb; i++) {
+          owl.remove(i);
+        }
+
+        if (cat == 'all') {
+          $('#projects-copy .project').each(function() {
+            owl.add($(this).clone());
+            owl.refresh();
+          });
+        } else {
+          $('#projects-copy .project.' + cat).each(function() {
+            console.log($(this).clone());
+            owl.add($(this).clone());
+            owl.refresh();
+          });
+        }
+      }
+      $('#carouselPart .project').clone().appendTo($('#projects-copy'));
+      $('#project-terms a').click(function(e) {
+        e.preventDefault();
+        $('#project-terms a').removeClass('active');
+
+        cat = $(this).attr('ID');
+        $(this).addClass('active');
+        showProjectsbyCat(cat);
+      });
+    });
 </script>
 {% endblock %}
 
