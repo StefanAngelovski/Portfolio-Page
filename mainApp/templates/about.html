@@ -7,93 +7,164 @@
 
 </head>
 <style>
-    #owl-demo .owl-item > div img {
-      display: block;
-      width: 100%;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      margin-bottom: 4px;
-    }
+.carousel-wrap {
+    width: 1000px;
+    margin: auto;
+    position: relative;
+  }
+  .owl-carousel .owl-nav{
+    overflow: hidden;
+    height: 0px;
+  }
 
-    #owl-demo .owl-item > div {
-      padding: 0px 2px
-    }
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+      background: #2caae1;
+  }
 
-    .active {
-      color: red;
-    }
 
-    .hide {
-      display: none;
-    }
+  .owl-carousel .item {
+      text-align: center;
+  }
+  .owl-carousel .nav-btn{
+      height: 47px;
+      position: absolute;
+      width: 26px;
+      cursor: pointer;
+      top: 100px !important;
+  }
+
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled{
+    pointer-events: none;
+    opacity: 0.2;
+  }
+
+  .owl-carousel .prev-slide{
+      background: url("https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png") no-repeat scroll 0 0;
+      left: -33px;
+  }
+  .owl-carousel .next-slide{
+      background: url("https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png") no-repeat scroll -24px 0px;
+      right: -33px;
+  }
+  .owl-carousel .prev-slide:hover{
+     background-position: 0px -53px;
+  }
+  .owl-carousel .next-slide:hover{
+    background-position: -24px -53px;
+  }
+
+  span.img-text {
+    text-decoration: none;
+    outline: none;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    cursor: pointer;
+    width: 100%;
+    font-size: 23px;
+    display: block;
+    text-transform: capitalize;
+  }
+  span.img-text:hover {
+    color: #2caae1;
+  }
 </style>
 <body>
-    <div id="project-terms"> <a id="all" class="active" href="#">ALL</a>
-  <a id="cat1" href="#">CAT1</a>
-  <a id="cat2" href="#">CAT2</a>
-  <a id="cat3" href="#">CAT3</a>
-
-</div>
-<div id="owl-demo" class="owl-carousel">
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
+  <div class="carousel-wrap">
+       <div id="project-terms">
+        <a id="all" class="active" href="#">ALL</a>
+        <a id="WebDev" href="#">Web Dev</a>
+        <a id="Electronics" href="#">Electronics</a>
+        <a id="Mobile" href="#">Mobile</a>
+        <a id="Software" href="#">Software</a>
+    </div>
+    <div class="owl-carousel owl-theme" id="carouselPart">
+        <div class="item project WebDev">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png"  alt="IMG">
+                <div class="p-2">
+                    <h5 class="card-title">Portfolio Website</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item project WebDev">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>React app</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item project Mobile">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Android app</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item project Electronics">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Robotic arm</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item project WebDev">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Springboot app</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item project Electronics">
+            <div class="card">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="IMG">
+                <div class="p-2">
+                    <h5>Bluetooth Speaker</h5>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item project Software">
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png" alt="IMG">
+                <div class="p-2">
+                    <h5>ARK Threadripper Launcher</h5>
+                    <p>A launcher for a Server in a game called ARK Survival Evolved</p>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
-  </div>
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
-  </div>
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
-  </div>
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
-  </div>
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
-  </div>
-  <div class="project cat1">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat1" alt="" />
-  </div>
-  <div class="project cat2">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat2" alt="" />
-  </div>
-  <div class="project cat2">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat2" alt="" />
-  </div>
-  <div class="project cat2">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat2" alt="" />
-  </div>
-  <div class="project cat3">
-    <img src="http://placehold.it/100x100/42bdc2/FFFFFF&text=cat3" alt="" />
-  </div>
-</div>
-<div id="projects-copy" class="hide"></div>
-
 </body>
 <script>
-    $('.owl-carousel').owlCarousel({
-        loop:false,
-        margin:15,
-        nav:true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        autoplayTimeout:7000,
-        autoplayHoverPause:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:4
+        $('.owl-carousel').owlCarousel({
+            margin: 10,
+            nav: true,
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
             }
-        }
-    })
+        });
 </script>
 <script>
     $(document).ready(function() {
