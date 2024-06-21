@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png"/>
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- "Play" Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    .navbarStyle a, .navbarStyle a:hover, #portfolioBrand{
+        color: white;
+        text-decoration: none;
+        position: relative;
+        font-family: "Play", sans-serif;
+    }
+
+    @media (min-width: 991px) {
+        .container{
+            max-width: 75%;
+        }
+
+        .card{
+            transition: all 0.3s;
+            height: 90%;
+        }
+
+        .card:hover{
+            transform: scale(1.08);
+            background-color: blue;
+        }
+
+        .nav-link:focus{
+            color: inherit;
+        }
+
+        .navbarStyle a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 20%;
+            height: 0.1rem;
+            background-color: cyan;
+            visibility: hidden;
+            transition: 0.3s ease-in-out;
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+
+        @keyframes jump-combo {
+          0% { transform: translateY(0); } /* Start at original position */
+          50% { transform: translateY(-20px); } /* Jump up (0.5s) */
+          100% { transform: translateY(0); } /* Reset to original position (0.5s) */
+        }
+
+        .navbarStyle a:hover::before {
+            visibility: visible;
+            width: 80%;
+            opacity: 1;
+        }
+
+        #sidebarButton{
+            display: none;
+        }
+    }
+
+
+    .card{
+        background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
+        backdrop-filter: blur(10px);
+    }
+
+    .card h5, .card p{
+        color: white;
+    }
+
+
+    #mobileBackground{
+        background-color: rgb(16, 0, 40);
+    }
+
+    #logo{
+        height: auto;
+        width: 40px;
+        position: relative;
+        top: -0.5rem;
+    }
+
+    #contact span, #contact a{
+        color: lightgray;
+        padding-bottom: 5%
+    }
+
+    .contactIcons{
+        max-width: 10%;
+    }
+
+    .contactIcons li a{
+        color: white;
+    }
+
+    .contactIcons li a:hover{
+        color: cyan;
+    }
+
+    .contactIcons::before{
+        background: rgba(225, 225, 225, 0.2);
+        width: 1px;
+        height: 15px;
+        left: 0;
+        position: relative;
+        content: "";
+    }
+
+    .contactIconsBelow li a{
+        color: white;
+        border-radius: 50%;
+        background-color: rgb(35, 27, 48);
+        margin-left: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .contactIconsBelow li a:hover{
+        color: cyan;
+    }
+
+
+    .navbarStyle {
+        color: white;
+    }
+
+
+    #sidebar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 20vh;
+        z-index: 999;
+        background: linear-gradient(135deg, rgba(128, 0, 128, 0.9), rgba(0, 0, 255, 0.9));
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%); /* Initially move the sidebar off the screen */
+        transition: transform 0.3s ease-out; /* Animate the transform property */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #sidebar li a{
+        color: white;
+        font-family: 'Play', sans-serif;
+    }
+
+
+    #sidebar .nav-item:after{
+        content: "";
+        display: block;
+        border-bottom: 2px solid cyan;
+    }
+    .circle {
+      height: 20px;
+      width: 20px;
+      border-radius: 24px;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999; /* so that it stays on top of all other elements */
+    }
+
+
+
+    #fancyButton, #fancyButton:hover{
+        color: white;
+        text-decoration: none;
+        position: relative;
+        padding: 14px 32px 12px;
+        font-family: 'Play', sans-serif;
+    }
+
+    #mainText span, #fancyButton, h2{
+        color: white;
+        font-family: "Play", sans-serif;
+    }
+
+    #mainText{
+        animation: jump-combo 1s ease-in-out alternate; /* Combined animation */
+    }
+
+
+    #mainText h2{
+        color: white;
+        font-weight: bold;
+    }
+
+
+    #fancyButton, #mainText{
+        font-size: 1rem;
+        color: white;
+        text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+    }
+
+    #fancyButton{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    #background{
+        height: 40rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
+        background-size: cover;
+    }
+
+
+    #centerSection{
+        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    #verticalCenter{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .rulerSection{
+        opacity: 0;
+    }
+
+    .modal-content{
+        background: linear-gradient(135deg, rgba(16, 0, 40, 1), rgba(0, 255, 255, 1));
+        backdrop-filter: blur(10px);
+    }
+
+
+    .modal-content h4, .modal-content p, .modal-content h6{
+        font-family: 'Play', sans-serif;
+        color: ghostwhite;
+    }
+
+    .modal-content h6{
+        font-size: 1.8vh;
+        padding-top: 5%;
+    }
+
+    .modal-body img{
+        filter: invert(100%);
+    }
+
+    .modal-content::before{
+        content: '';
+        position: absolute;
+        width: 170px;
+        margin-left: 35%;
+        top: -25%;
+        height: 150%;
+        background: linear-gradient(#00ccff, #d500f9);
+        animation: rotate 4s linear infinite;
+        overflow: hidden;
+    }
+
+    .modal-content div{
+        z-index: 3 !important;
+    }
+
+    .modal-content::after{
+        content: '';
+        position: absolute;
+        background: #0e1538;
+        inset: 5px;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    #fancyButton::before, #fancyButton::after{
+        content: '';
+        position: absolute;
+        width: 15%;
+        height: 70%;
+        transition: width 1s ease-in-out, height 1s ease-in-out;
+    }
+
+    #fancyButton::before {
+        top: 0;
+        left: 0;
+        border-left: 2px solid cyan;
+        border-top: 2px solid cyan;
+        transform-origin: top left;
+    }
+
+    #fancyButton:hover::before, #fancyButton:hover::after{
+        width: 100%;
+        height: 100%;
+        transform: scaleX(1) scaleY(1);
+    }
+
+    #fancyButton::after {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid cyan;
+        border-right: 2px solid cyan;
+        transform-origin: bottom right;
+    }
+
+    #carouselPart{
+        height: 60vh;
+    }
+
+    #carouselPart .card{
+        height: 80%;
+    }
+
+    .card{
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
+
+    /* Responsive height adjustment for smaller screens */
+    @media (max-width: 600px) {
+        #background {
+            height: 50vh; /* Adjust the height based on viewport height for mobile devices */
+        }
+
+        .card{
+            margin-top: 5vh;
+            margin-bottom: -4.5vh;
+        }
+
+        .circle{
+            display: none;
+        }
+
+        #centerSection{
+            height: 20vh;
+        }
+
+        .rulerSection{
+            color: white;
+            opacity: 1;
+        }
+
+
+        #fancyButton::before, #fancyButton::after{
+            width: 100%;
+            height: 100%;
+            transform: scaleX(1) scaleY(1);
+        }
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        height: 55%;
+    }
+
+    .checkMark{
+        color: cyan;
+    }
+
+
+    #secondTitle h2{
+        position: relative;
+        color: white;
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+
+
+    #secondTitle span{
+        color: silver;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    #secondTitle h2::after{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 5px;
+        width: 70px;
+        background: #00bfe7;
+        content: "";
+    }
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: cyan transparent;
+    }
+
+
+    .spinningSquareWrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .spinningSquareWrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid cyan; /* Border applied to the pseudo-element */
+        transition: transform 0.5s ease-in-out; /* Smooth transition for the rotation */
+        box-sizing: border-box; /* Ensure the border is included in the element's dimensions */
+    }
+
+    .spinningSquareWrapper:hover::before {
+        transform: rotate(50deg);
+    }
+
+    .spinningSquare {
+        display: block; /* Ensure the image is a block element */
+    }
+
+    #project-terms{
+        padding-top: 18px;
+        border-bottom: 1px cyan solid;
+    }
+
+    #project-terms a{
+        color: white;
+        font-family: 'Play', sans-serif;
+        text-decoration: none;
+    }
+
+    .active {
+        color: cyan !important;
+    }
+
+
+    .hide {
+        display: none;
+    }
+
+    .slick-slider {
+        width: 90%;
+        margin: auto;
+        background: #000;
+    }
+
+    .nav-btn {
+        height: 47px;
+        position: absolute;
+        width: 26px;
+        cursor: pointer;
+        top: 23vh !important;
+        background-color: white;
+    }
+
+    .prev-slide.slick-disabled,
+    .next-slide.slick-disabled {
+        pointer-events: none;
+        opacity: 0.2;
+    }
+
+    .prev-slide {
+        background: url("https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718914290/cards/hcneshthvsjrcisx00en.png") no-repeat scroll 0 0;
+        left: -5vh;
+    }
+
+    .next-slide {
+        background: url("https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718914290/cards/hcneshthvsjrcisx00en.png") no-repeat scroll -24px 0;
+        right: -5vh;
+    }
+
+    .prev-slide:hover {
+        background-position: 0 -53px;
+    }
+
+    .next-slide:hover {
+        background-position: -24px -53px;
+    }
+
+    .owl-theme .owl-dots{
+        position: absolute;
+        width: 100%;
+        bottom: -5vh;
+        margin: 0 auto;
+    }
+
+    .btn-close{
+        filter: invert(100%);
+    }
+
+    .btn-close:focus{
+        border: 5px solid cyan;
+    }
+
+    .feats .text-center.mx-auto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .owl-carousel a{
+        text-decoration: none;
+    }
+</style>
+
+<div id="circlesContainer"></div>
+
+<script type="module">
+  const coords = { x: 0, y: 0 };
+  const colors = [
+    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c",
+    "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e",
+    "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"
+  ];
+  const circlesContainer = document.getElementById("circlesContainer");
+
+  for (let i = 0; i < 40; i++) {
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+    circle.style.backgroundColor = colors[i % colors.length];
+    circlesContainer.appendChild(circle);
+  }
+
+  const circles = document.querySelectorAll(".circle");
+  circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.opacity = 0; // Initially set opacity to 0 (invisible)
+  });
+
+  let isCursorStill = true;
+  let lastX = 0;
+  let lastY = 0;
+  const movementThreshold = 40;
+  let timeoutId = null;
+
+  window.addEventListener("mousemove", function(e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+
+    const distanceX = Math.abs(coords.x - lastX);
+    const distanceY = Math.abs(coords.y - lastY);
+    const totalDistance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+    if (totalDistance > movementThreshold) {
+      isCursorStill = false;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    } else {
+      if (!timeoutId) {
+        timeoutId = setTimeout(() => {
+          isCursorStill = true;
+          timeoutId = null;
+        }, 200);
+      }
+    }
+
+    lastX = coords.x;
+    lastY = coords.y;
+  });
+
+  function animateCircles() {
+    if (!isCursorStill) {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 5 + "px";
+        circle.style.top = y - 4 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+        circle.x = x;
+        circle.y = y;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+        circle.style.opacity = 1;
+      });
+    } else {
+      circles.forEach(function (circle) {
+        circle.style.opacity = 0;
+      });
+    }
+    requestAnimationFrame(animateCircles);
+  }
+  setTimeout(animateCircles, 1000);
+</script>
+
+<!-- To remove the # from url-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.scroll-link').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+
+<body style="background-color: rgb(16, 0, 40)">
+    <section id="background">
+        <nav class="navbar navbar-expand-lg" id="mobileBackground">
+            <div class="container">
+                <a class="navbar-brand py-3" id="portfolioBrand" href="">
+                    <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
+                    PORTFOLIO
+                </a>
+
+
+                <div class="navbarStyle collapse navbar-collapse justify-content-center" id="centerNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link scroll-link" data-target="secondTitle" href="">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll-link" data-target="centerSection" href="">PORTFOLIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#technologies">TECH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll-link" data-target="contact" href="">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav" id="sidebar">
+                    <li onclick=hideSidebar() style="background: linear-gradient(rebeccapurple, purple)" class="w-100 pb-2  ">
+                        <svg style="margin-top: 20%; border: 1px solid cyan; margin-left: 15px;" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path></svg>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link scroll-link d-flex mx-auto" href="" data-target="mobileBackground">HOME</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link scroll-link" href="" data-target="secondTitle">ABOUT</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link scroll-link" href="" data-target="centerSection">PORTFOLIO</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link scroll-link" href="" data-target="contact">CONTACT</a>
+                    </li>
+                </ul>
+                <script>
+                function showSidebar(){
+                    const sidebar = document.querySelector('#sidebar');
+                    sidebar.style.transform = 'translateX(0)'; // Move the sidebar onto the screen
+                    const sidebarButton = document.querySelector('#sidebarButton');
+                    sidebarButton.style.display = 'none';
+                }
+
+                function hideSidebar(){
+                    const sidebar = document.querySelector('#sidebar');
+                    sidebar.style.transform = 'translateX(100%)'; // Move the sidebar off the screen
+                    if (window.innerWidth < 991) {
+                        const sidebarButton = document.querySelector('#sidebarButton');
+                        sidebarButton.style.display = 'flex';
+                    }
+}
+
+                    // Removes the sidebarButton upon resizing the window
+                    window.addEventListener('resize', function() {
+                        const sidebarButton = document.querySelector('#sidebarButton');
+                        if (window.innerWidth > 991) { // Change 991 to your desired breakpoint
+                            sidebarButton.style.display = 'none';
+                        } else if (document.querySelector('#sidebar').style.display !== 'flex') {
+                            // Only show the sidebar button on small screens if the sidebar is not visible
+                            sidebarButton.style.display = 'flex';
+                        }
+                    });
+                </script>
+                <ul class="navbar-nav contactIcons collapse navbar-collapse justify-content-end" style="padding-right: 50px">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/StefanAngelovski">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/stefan-angelovski-43181a19a/">
+                            <i class="fa fa fa-linkedin"></i>
+                        </a>
+                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/stefanangelovski_/">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.youtube.com/channel/UClftk6hWK8ajNf3TY2xTxuQ">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+                </ul>
+                <span id="sidebarButton" style="padding-right: 10%;">
+                    <a style="background: none" onclick=showSidebar()>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                    </a>
+                </span>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-8" id="mainText" style="padding-top: 10%">
+                    <span class="display-9">COMPUTER SCIENCE ENGINEER</span>
+                    <h2 class="display-3 pb-5 py-3">Hello,<br> I'm Stefan Angelovski</h2>
+                    <a id="fancyButton" class="scroll-link" data-target="secondTitle" href="">SEE MORE ABOUT ME</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container" style="padding-bottom: 2%; padding-top: 4%;">
+        <div class="row">
+            <div class="col col-lg-4 col-md-12 mb-5 col-12" id="secondTitle">
+                <span>MY SERVICES</span>
+                <h2 class="pb-3">WHAT DO I DO?</h2>
+                <p class="pb-5 py-3" style="color: silver">I am a versatile software engineer passionate about creating websites and building robots.
+                    As a dedicated tinkerer, I thrive on solving complex problems and bringing ideas to life
+                    through technology.</p>
+                <a id="fancyButton" href="" data-bs-toggle="modal" data-bs-target="#technologies">VIEW ALL TECHNOLOGIES</a>
+                <br>
+                <ul class="pt-5" style="list-style: none; padding-left: 0">
+                    <li >
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px; ">Proficient in English <br></span>
+                    </li>
+                    <li class="py-2">
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px">Highly determined <br></span>
+                    </li>
+                    <li>
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px">Easily adaptable <br></span>
+                    </li>
+                    <li class="pt-2">
+                        <i class="fa fa-check checkMark"></i>
+                        <span style="font-size: 15px">Welcomes challenges <br></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-lg-7 col-md-12">
+                <div class="row">
+                    <div class="pb-4 col col-lg-6 col-md-12 col-sm-6 col-12">
+                        <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057807/Background%20media/logos/sc3lnegjreu6b3yxnujd.ico" alt="Image"></span>
+                        <h3 class="text-white">Websites</h3>
+                        <p style="color: silver">
+                            I handle both front and back-end development, crafting user-friendly websites. My focus is on simple,
+                            functional designs that elevate user experiences and support business growth.</p>
+                        <hr class="rulerSection">
+                    </div>
+        
+                    <div class="pb-4 col col-lg-6 col-md-10 col-sm-6 col-12">
+                        <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057808/Background%20media/logos/b9d4t2fp7gesam97r3pq.ico" alt="Image"></span>
+                        <h3 class="text-white">Mobile Apps</h3>
+                        <p style="color: silver">I showcase expertise in developing intuitive and functional applications for various platforms.
+                            With a focus on user-friendly interfaces and robust features, I specialize in creating high-quality
+                            mobile experiences that meet diverse needs.</p>
+                        <hr class="rulerSection">
+                    </div>
+        
+                    <div class="pb-4 col col-lg-6 col-md-12 col-sm-6 col-12">
+                        <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057808/Background%20media/logos/k6z3agimuezkquyeo32v.ico" alt="Image"></span>
+                        <h3 class="text-white">Electronics</h3>
+                        <p style="color: silver">I have proficiency in designing and building electronic systems.
+                            From circuitry to embedded systems, I specialize in creating innovative solutions that blend
+                            functionality with creativity. My projects showcase a passion for tinkering and a commitment
+                            to pushing the boundaries of electronic engineering.</p>
+                        <hr class="rulerSection">
+                    </div>
+        
+                    <div class="pb-4 col col-sm-6 col-lg-6 col-md-12 col-sm-6 col-12">
+                        <span class="spinningSquareWrapper mb-4 p-3"><img class="spinningSquare" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717057807/Background%20media/logos/l5l2hggifslwdwkscfhc.ico" alt="Image"></span>
+                        <h3 class="text-white">Game Dev</h3>
+                        <p style="color: silver">I dive into my love for crafting captivating gaming experiences. From brainstorming exciting gameplay
+                            ideas to bringing characters to life, I'm all about creating fun and immersive adventures. Let's
+                            explore the worlds I've built and the excitement waiting to be unleashed!</p>
+                        <hr class="rulerSection">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="centerSection">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-7" id="verticalCenter">
+                    <span id="mainText"><h2 class="display-3">MY PROJECTS</h2></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="project-terms">
+            <a id="all" class="active" href="#">ALL</a>
+            <a id="WebDev" href="#">Web Dev</a>
+            <a id="Electronics" href="#">Electronics</a>
+            <a id="Mobile" href="#">Mobile</a>
+            <a id="Software" href="#">Software</a>
+        </div>
+        <div class="owl-carousel owl-theme" id="carouselPart">
+            <div class="item project WebDev">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png"  alt="IMG">
+                        <div class="p-2">
+                            <h5 class="card-title">Portfolio Website</h5>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item project WebDev">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
+                        <div class="p-2">
+                            <h5>React app</h5>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item project Mobile">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
+                        <div class="p-2">
+                            <h5>Android app</h5>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item project Electronics">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
+                        <div class="p-2">
+                            <h5>Robotic arm</h5>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item project WebDev">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
+                        <div class="p-2">
+                            <h5>Springboot app</h5>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item project Electronics">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
+                        <div class="p-2">
+                            <h5>Bluetooth Speaker</h5>
+                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item project Software">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png" alt="IMG">
+                        <div class="p-2">
+                            <h5>ARK Threadripper Launcher</h5>
+                            <p>A launcher for a Server in a game called ARK Survival Evolved</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="projects-copy" class="hide"></div>
+    </div>
+    <div class="modal fade" id="technologies" tabindex="1" aria-labelledby="technologiesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-l modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header container">
+                  <h5 class="modal-title text-white" id="technologiesLabel" style="font-family: 'Play', sans-serif">Technologies</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body container feats">
+                    <h4 class="mb-3">Web Development</h4>
+                    <div class="row mb-3">
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/zvv1lmjrlqg8dlpd4xml.svg" class="img-fluid" alt="HTML Logo">
+                          <h6>HTML</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/kcsv0rayvd3z3qsnj0j1.svg" class="img-fluid" alt="CSS Logo">
+                            <h6>CSS</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/aysjcs6o8wjak67in1zi.svg" class="img-fluid" alt="Bootstrap Logo">
+                            <h6>Bootstrap</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/vwviwtiiay3e2bjgxwru.svg" class="img-fluid" alt="Django Logo">
+                            <h6>Django</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/cwmc0kkyxwfvnchrfjbm.svg" class="img-fluid" alt="React Logo">
+                            <h6>React</h6>
+                        </div>
+                    </div>
+                    <h4 class="mb-3">Programming Languages</h4>
+                    <div class="row mb-3">
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148808/Background%20media/logos/escakdsh4mzdxfd4lnny.png" class="img-fluid" alt="C Logo">
+                            <h6>C</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148664/Background%20media/logos/n2ldt82nl9e3vsqeb722.png" class="img-fluid" alt="C++ Logo">
+                          <h6>C++</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148602/Background%20media/logos/ppi4huc7gyewje11nuwe.svg" class="img-fluid" alt="Java Logo">
+                          <h6>Java</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/g5w9iyvkzbabfevxe8sy.svg" class="img-fluid d-flex justify-content-center mx-auto" alt="JavaScript Logo">
+                          <h6>JavaScript</h6>
+                        </div>
+                        <div class="col-md-2 col-2 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/ydbszjgfjryctt9jwbwg.svg" class="img-fluid" alt="Python Logo">
+                          <h6>Python</h6>
+                        </div>
+                    </div>
+                    <h4 class="mb-3">IDEs Used</h4>
+                    <div class="row">
+                    <div class="row col col-md-8 col-8 mb-3">
+                        <div class="col-md-3 col-3 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg" class="img-fluid" alt="Arduino Logo">
+                          <h6>Arduino</h6>
+                        </div>
+                        <div class="col-md-3 col-3 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/uixjadj72rx3e6ozlbxd.svg" class="img-fluid" alt="IntelliJ Idea Logo">
+                          <h6>IntelliJ Idea</h6>
+                        </div>
+                        <div class="col-md-3 col-3 text-center mx-auto">
+                          <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717151590/Background%20media/logos/yufy2xjiuseala5lcywc.svg" class="img-fluid" alt="IntelliJ Idea Logo">
+                          <h6>Unity</h6>
+                        </div>
+                    </div>
+                        </div>
+                    <h4 class="mb-3">Other Skills</h4>
+                    <ul style="list-style: none; padding-left: 0; color: white; font-family: 'Play', sans-serif">
+                        <li >
+                            <i class="fa fa-check checkMark"></i>
+                            <span style="font-size: 15px; ">Knowledge of electronics, computer hardware and architecture, virtual machines and Github.<br></span>
+                        </li>
+                        <li class="py-2">
+                            <i class="fa fa-check checkMark"></i>
+                            <span style="font-size: 15px">Understanding of Android and Windows operating systems, as well as Microsoft 365 applications. <br></span>
+                        </li>
+                        <li>
+                            <i class="fa fa-check checkMark"></i>
+                            <span style="font-size: 15px">Experience with UI/UX design using Paint.net. <br></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:false,
+            margin:15,
+            nav:true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            autoplayTimeout:7000,
+            autoplayHoverPause:false,
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:4
+                }
+            }
+        })
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+          var options = {
+            navigation: true,
+            pagination: true
+          };
+          $("#carouselPart").owlCarousel(options)
+          function showProjectsbyCat(cat) {
+            var owl = $("#carouselPart").data('owl.carousel');
+    
+            var nb = owl.items().length;
+            console.log(nb)
+            for (var i = 0; i < nb; i++) {
+              owl.remove(i);
+            }
+    
+            if (cat == 'all') {
+              $('#projects-copy .project').each(function() {
+                owl.add($(this).clone());
+                owl.refresh();
+              });
+            } else {
+              $('#projects-copy .project.' + cat).each(function() {
+                console.log($(this).clone());
+                owl.add($(this).clone());
+                owl.refresh();
+              });
+            }
+          }
+          $('#carouselPart .project').clone().appendTo($('#projects-copy'));
+          $('#project-terms a').click(function(e) {
+            e.preventDefault();
+            $('#project-terms a').removeClass('active');
+    
+            cat = $(this).attr('ID');
+            $(this).addClass('active');
+            showProjectsbyCat(cat);
+          });
+        });
+    </script>
+    
+    
+    
+    
+    <div class="modal fade" id="projectModal" tabindex="1" aria-labelledby="projectLabel" aria-hidden="true">
+        <div class="modal-dialog modal-l modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header container">
+                  <h5 class="modal-title text-white" style="font-family: 'Play', sans-serif">Project</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body container">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(10, 1, 25)">
+        <div class="container">
+            <footer class="pb-3">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand pt-3" id="portfolioBrand" href="" style="position: relative; z-index: 2;">
+                        <img id="logo" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716648762/Background%20media/logos/dqa4nsbyywmfo7r4ty8p.png" alt="IMG">
+                        PORTFOLIO
+                    </a>
+
+                    <ul class="navbar-nav contactIconsBelow collapse navbar-collapse justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/StefanAngelovski">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com/in/stefan-angelovski-43181a19a/">
+                                <i class="fa fa fa-linkedin"></i>
+                            </a>
+                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/stefanangelovski_/">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com/channel/UClftk6hWK8ajNf3TY2xTxuQ">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <hr style="color: white; margin: 0; padding: 0 0 50px;">
+                <div class="row" id="contact">
+                    <div class="pb-4 col col-md-4 col-12">
+                        <h5 class="text-white pb-3">About me</h5>
+                        <span>Stefan Angelovski<br></span>
+                        <span>Age: 21<br></span>
+                        <span>City: Skopje<br></span>
+                        <span style="padding-bottom: 50px">Residence: Macedonia<br></span>
+                        <br>
+                        <a href="" class="text-white" style="text-decoration: none">Read more &#8594</a>
+                    </div>
+
+
+                    <div class="pb-4 col col-md-4 col-12">
+                        <h5 class="text-white pb-3">Education:</h5>
+                        <span><b>High School:</b><br>
+                            SUGS Nikola Karev<br><br>
+                            <b>Faculty:</b><br>
+                            Faculty of Computer Science and Engineering - FINKI</span>
+                    </div>
+
+                    <div class="pb-4 col col-md-4 col-12">
+                        <h5 class="text-white pb-3">Contact</h5>
+                        <span><b>Email:</b><br></span>
+                        <a href="mailto:stefanangelovski2002@gmail.com">stefanangelovski2002@gmail.com</a><br><br>
+                        <span><b>Phone:</b><br><a href="tel:+389-78-294-115">+389 078-294-115</a><br>
+                        Or via SMS</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
