@@ -44,7 +44,6 @@
 
         .card{
             transition: all 0.3s;
-            height: 90%;
         }
 
         .card:hover{
@@ -147,7 +146,6 @@
     .contactIconsBelow li a:hover{
         color: cyan;
     }
-
 
     .navbarStyle {
         color: white;
@@ -348,7 +346,7 @@
     }
 
     #carouselPart .card{
-        height: 80%;
+        height: 50vh;
     }
 
     .card{
@@ -356,16 +354,11 @@
         margin-bottom: 5vh;
     }
 
-
+    
     /* Responsive height adjustment for smaller screens */
     @media (max-width: 600px) {
         #background {
             height: 50vh; /* Adjust the height based on viewport height for mobile devices */
-        }
-
-        .card{
-            margin-top: 5vh;
-            margin-bottom: -4.5vh;
         }
 
         .circle{
@@ -387,6 +380,16 @@
             height: 100%;
             transform: scaleX(1) scaleY(1);
         }
+
+        .owl-nav {
+            display: none;
+        }
+
+        .owl-dots{
+            position: absolute;
+            bottom: 50%;
+        }
+
     }
 
     .card-img-top {
