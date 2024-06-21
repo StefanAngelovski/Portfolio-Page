@@ -1,2 +1,2 @@
-# Django_Portfolio_Page
- Playing around with Django and Bootstrap
+# Portfolio_Page
+ This is my Portfolio website front end made using bootstrap and effects with Javascript.
