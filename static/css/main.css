@@ -57,20 +57,15 @@
 
 
     /* Responsive height adjustment for smaller screens */
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
         #background {
             height: 50vh; 
-        }
-
-        #centerSection{
-            height: 20vh;
         }
 
         .rulerSection{
             color: white;
             opacity: 1;
         }
-
 
         #fancyButton::before, #fancyButton::after{
             width: 100%;
@@ -91,16 +86,29 @@
 
     }
 
+    #centerSection{
+        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
+        background-size: contain;
+        background-size: 100% auto;
+        padding: 10% 0%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
 
     .owl-carousel .card{
         background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
         backdrop-filter: blur(10px);
     }
 
-    .card h5, .card p{
+    .card h4, .card p{
         color: white;
     }
-
+    .card p{
+        font-size: 1.15rem;
+    }
 
     #mobileBackground{
         background-color: rgb(16, 0, 40);
@@ -249,17 +257,6 @@
     }
 
 
-    #centerSection{
-        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
-        background-size: cover;
-        height: 50vh;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
     #verticalCenter{
         display: flex;
         align-items: center;
@@ -274,7 +271,7 @@
         background: linear-gradient(135deg, rgba(16, 0, 40, 1), rgba(0, 255, 255, 1));
         backdrop-filter: blur(10px);
     }
-
+    
 
     .modal-content h4, .modal-content p, .modal-content h6{
         font-family: 'Play', sans-serif;
@@ -365,11 +362,15 @@
         margin-bottom: 5vh;
     }
 
-    
+    .gitLink{
+        position: absolute; 
+        bottom: 10px; 
+        right: 10px;
+    }
 
     .card-img-top {
         object-fit: cover;
-        height: 55%;
+        height: 28vh;
     }
 
     .checkMark{
@@ -440,8 +441,10 @@
     #project-terms a{
         color: white;
         font-family: 'Play', sans-serif;
+        font-size: 1.2rem;
         text-decoration: none;
-    }
+        padding-right: 5px;
+    }  
 
     .active {
         color: cyan !important;

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Listen for clicks on anchors that open the modal
 document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function(element) {
     element.addEventListener('click', function() {
-    var projectName = this.querySelector('h5').textContent; // Extract project name from <h5>
+    var projectName = this.querySelector('h4').textContent; // Extract project name from <h5>
     var modalTitle = document.querySelector('#projectModal .modal-title'); // Find the modal title element
 
     if (modalTitle) {
