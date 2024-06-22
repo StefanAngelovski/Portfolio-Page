@@ -52,6 +52,43 @@
         #sidebarButton{
             display: none;
         }
+        
+    }
+
+
+    /* Responsive height adjustment for smaller screens */
+    @media (max-width: 600px) {
+        #background {
+            height: 50vh; 
+        }
+
+        #centerSection{
+            height: 20vh;
+        }
+
+        .rulerSection{
+            color: white;
+            opacity: 1;
+        }
+
+
+        #fancyButton::before, #fancyButton::after{
+            width: 100%;
+            height: 100%;
+            transform: scaleX(1) scaleY(1);
+        }
+
+        .owl-nav {
+            display: none;
+        }
+        
+        .owl-carousel{
+            position: relative;
+        }
+        .owl-dots{
+            display: none;
+        }
+
     }
 
 
@@ -158,18 +195,6 @@
         border-bottom: 2px solid cyan;
     }
 
-    .circle {
-      height: 20px;
-      width: 20px;
-      border-radius: 24px;
-      background-color: black;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999999; /* so that it stays on top of all other elements */
-    }
-
 
 
     #fancyButton, #fancyButton:hover{
@@ -206,6 +231,13 @@
         2px 2px 0 #000;
     }
 
+    #computerScienceTitle{
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
     #fancyButton{
         background-color: rgba(0, 0, 0, 0.3);
     }
@@ -334,43 +366,6 @@
     }
 
     
-    /* Responsive height adjustment for smaller screens */
-    @media (max-width: 600px) {
-        #background {
-            height: 50vh; /* Adjust the height based on viewport height for mobile devices */
-        }
-
-        .circle{
-            display: none;
-        }
-
-        #centerSection{
-            height: 20vh;
-        }
-
-        .rulerSection{
-            color: white;
-            opacity: 1;
-        }
-
-
-        #fancyButton::before, #fancyButton::after{
-            width: 100%;
-            height: 100%;
-            transform: scaleX(1) scaleY(1);
-        }
-
-        .owl-nav {
-            display: none;
-        }
-
-        .owl-dots{
-            position: absolute;
-            bottom: 50%;
-            z-index: 1;
-        }
-
-    }
 
     .card-img-top {
         object-fit: cover;
@@ -424,9 +419,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        border: 2px solid cyan; /* Border applied to the pseudo-element */
-        transition: transform 0.5s ease-in-out; /* Smooth transition for the rotation */
-        box-sizing: border-box; /* Ensure the border is included in the element's dimensions */
+        border: 2px solid cyan; 
+        transition: transform 0.5s ease-in-out; 
+        box-sizing: border-box; /
     }
 
     .spinningSquareWrapper:hover::before {
@@ -434,7 +429,7 @@
     }
 
     .spinningSquare {
-        display: block; /* Ensure the image is a block element */
+        display: block; 
     }
 
     #project-terms{

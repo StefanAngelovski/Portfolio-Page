@@ -31,12 +31,11 @@
 
     <!-- My Scripts -->
     <script src="static/js/Carousel-filter.js"></script>
-    <script src="static/js/Mouse-fire.js"></script>
     <script src="static/js/Remove-hashtag.js"></script>
     <script src="static/js/Sidebar.js"></script>
+    <script src="static/js/Project-Modals.js"></script>
 </head>
 
-<div id="circlesContainer"></div>
 
 
 
@@ -120,7 +119,7 @@
         <div class="container">
             <div class="row">
                 <div class="col col-md-8" id="mainText" style="padding-top: 10%">
-                    <span class="display-9">COMPUTER SCIENCE ENGINEER</span>
+                    <span class="display-9" id="computerScienceTitle">COMPUTER SCIENCE ENGINEER</span>
                     <h2 class="display-3 pb-5 py-3">Hello,<br> I'm Stefan Angelovski</h2>
                     <a id="fancyButton" class="scroll-link" data-target="secondTitle" href="">SEE MORE ABOUT ME</a>
                 </div>
@@ -217,7 +216,7 @@
         </div>
         <div class="owl-carousel owl-theme" id="carouselPart">
             <div class="item project WebDev">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="projects/Portfolio-Page.html">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png"  alt="IMG">
                         <div class="p-2">
@@ -228,7 +227,7 @@
                 </a>
             </div>
             <div class="item project WebDev">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
                         <div class="p-2">
@@ -239,7 +238,7 @@
                 </a>
             </div>
             <div class="item project Mobile">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
                         <div class="p-2">
@@ -250,18 +249,18 @@
                 </a>
             </div>
             <div class="item project Electronics">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="projects/Robotic_Arm.html">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
                         <div class="p-2">
                             <h5>Robotic arm</h5>
-                            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                            <p>Remotely controlled Robotic Arm - comes with an Android app.</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="item project WebDev">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
                         <div class="p-2">
@@ -272,7 +271,7 @@
                 </a>
             </div>
             <div class="item project Electronics">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png" alt="IMG">
                         <div class="p-2">
@@ -283,7 +282,7 @@
                 </a>
             </div>
             <div class="item project Software">
-                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal">
+                <a href="" data-bs-toggle="modal" data-bs-target="#projectModal" data-iframe-src="projects/Ark-Threadripper-Launcher.html">
                     <div class="card">
                         <img class="card-img-top" src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png" alt="IMG">
                         <div class="p-2">
@@ -410,13 +409,14 @@
         })
     </script>
     <div class="modal fade" id="projectModal" tabindex="1" aria-labelledby="projectLabel" aria-hidden="true">
-        <div class="modal-dialog modal-l modal-dialog-scrollable">
+        <div class="modal-dialog modal-l modal-dialog-scrollable" style="min-width: auto;">
             <div class="modal-content">
                 <div class="modal-header container">
                   <h5 class="modal-title text-white" style="font-family: 'Play', sans-serif">Project</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body container">
+                <div class="modal-body container"">
+                    <iframe src="" height="800" width="100%"></iframe>
                 </div>
             </div>
         </div>
