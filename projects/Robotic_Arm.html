@@ -6,7 +6,6 @@
     *{
         scrollbar-width: thin; 
         scrollbar-color: cyan transparent;
-        background-color: rgb(14, 21, 56);
     }
 
     li::marker {
@@ -20,9 +19,43 @@
     img{
         max-width: 100%;
     }
+
+    .image-video-wrapper {
+        position: relative;
+        display: inline-block; 
+    }
+
+    .image-video-wrapper img {
+        display: block; 
+        width: 100%; 
+        height: auto; 
+    }
+
+    .overlay-video {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: center; 
+    }
+
+    #fancyButton{
+        padding-left: 10%;
+        padding-bottom: 5%;
+        font-size: 1.4rem;
+        color: white;
+        text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+    }
 </style>
-<html style="scrollbar-width: thin; scrollbar-color: cyan transparent;">
-    <body>
+<html>
+    <body style="background-color: rgb(14, 21, 56);">
         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
         <h1>Really? A robot?</h1>
         <p>Yeah cool isn't it? It is a child's dream, so I thought about using my electronics knowledge to pull it off.
@@ -43,9 +76,7 @@
             <li><p>1 x Stable 5V Power Delivery: Ensures reliable servo operation using an Arduino Nano, a voltage step-up module, or a rechargeable Li-Ion battery (with charger). </p></li>
             <li><p>(Optional) 1 x 3.7V Rechargeable Li-Ion Battery: As an alternative to a battery holder this could be used with a Li-Ion battery charger module for infinite re-use. </p></li>
         </ul>
-        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132245/projects/hqkc3jhr40tmju9fou3y.jpg" alt="IMG" style="width: 50%; float: left;">
-        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132243/projects/nmtm8indeu7y29okrywa.jpg" alt="IMG" style="width: 40%; height: 40%;     float: right">
-        </div>
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132245/projects/hqkc3jhr40tmju9fou3y.jpg" alt="IMG">
         <h1>Considerations</h1>
         <p>Firstly I was thinking about which material to use to build the frame out of. 3D printing could work but I didn't have access to a printer as they're very expensive,
             and even if I found one the plastic would cost allot. So I decided to go with plywood, my dad had a few sheets lying around so I used that. It is a cheap material,
@@ -64,31 +95,63 @@
             Also a potential upgrade in the near future.
         </p>
         <p>
-            This was all first tested on a breadboard with potentiometers until later transfering to a solder PCB. Making the electronics allot more compact so you can put them under the robot base.
+            This was all first tested on a breadboard with potentiometers until later transfering to a solderable prototyping board. Making the electronics allot more compact so you can put them inside the robot base.
             The robot Bluetooth feature was later added after testing.
         </p>
-        <video width="50%" height="240" controls>
+        <video width="100%" height="240" controls>
             <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132025/projects/w68jtyf2k2jb4jonrmx3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <h1>SPACE</h1>
-        <video width="50%" height="240" controls>
-            <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132257/projects/gvccxqfdbjrf65wz4h9l.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <h1>SPACE</h1>
+        <h1>The Gripper</h1>
+        <p>Building this robot required an end-effector to manipulate objects, the initial testing was done on a piece of cardboard until later moving on to the plywood.
+            Essentialy the left and right side of the servo horns move in opposite directions, which means if we connect a wire coming from either one and then move the pivot
+            of each of the servo 'fingers' it will move them to the same point in the middle where they touch. Stronger servo means more grip, a good locking servo can also help with it.</p>
+        <div class="image-video-wrapper">
+            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132243/projects/nmtm8indeu7y29okrywa.jpg" alt="IMG">
+            <video width="30%" height="240" controls class="overlay-video">
+                <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132257/projects/gvccxqfdbjrf65wz4h9l.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h1>Movement</h1>
+        <p>In consideration for this, I put myself to work in cutting all the necessary plywood pieces as I knew I needed the structural integrity.
+            The plywood sheet was cut into separate rectangular wooden strips using a machine saw. After I brought them home I could further cut them into
+            smaller chunks with a hand saw. The more complicated pieces like the gripper fingers and the shoulder were cut a little more precisely.
+            A few drilled holes later I could connect each of the pieces with screws and nuts to act as pivot points. The more the nuts are tightened the more
+            the arm can hold its position. The first servo was attached to the base (which was glued together with hot glue) moved the robot with horizontal rotation
+            the second was at the side providing vertical movement and the third at the front leg allowing the robot to go back and forth. Effectively this allowed
+            the robot to move in all 3 dimensions.
+        </p>
         <video width="100%" height="240" controls>
             <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132038/projects/xxmubq6lmckixmur3l3v.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <h1>SPACE</h1>
+        <h1>Mobile app</h1>
+        <p>I experimented with different ways of controlling the robot remotely, one of them was using a PS4 controller I borrowed. It wasn't particularly long-term
+            and the libraries were very outdated, none seemed to work. So I decided to make my own app. I used MIT App Inventor, a block-based programming language which
+            would speed up the process and allow me to focus on the bluetooth communication.</p>
+        <p>The APP sends two integer digits to the ESP32, the first is the button number and the second is the boolean state. So whether on or off, 
+            the Arduino code takes this as an input inside a switch-case and moves the servos accordingly.</p>
+        <p>A video is provided as a demonstration, just note that some of the screws were loose in that demonstration if you can notice some wobble. This is easily fixed.</p>
+        <div class="flex-container">
+            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719182109/projects/qzeply5beq2pbiibvxyy.jpg" alt="IMG" style="width: 20%; height: auto;">
+            <h3 id="fancyButton">The Robotic Arm - APP</h3>
+        </div>        
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719182110/projects/fpu3ruybzlay8kytyubh.jpg" alt="IMG">
+
         <video width="100%" height="240" controls>
             <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132100/projects/cliymbfelyamufifv2gt.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132241/projects/xoiccjepjri1k3lzmtod.jpg" alt="IMG">
         <h1>Accomplishments</h1>
         <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719131804/projects/fgyednyxugksax54nnym.jpg" alt="IMG">
         <h1>CIIT 2024</h1>
-    </body>
+        <p>I was asked to join "The International Conference on Informatics and Information Technologies" which is series of conferences organized by the Faculty of Computer Science and Engineering (FCSE).</p>
+        <p>To join, I had to formulate a paper based on my Robotic Arm project which I later submitted with the mentorship of Vlatko Spasev from the same faculty. Quickly the team checked up on me and asked me
+            to join their conference where I'd later present my project and receive questions from an international audience. Everything was paid for at Hotel Sirius in Strumica, there was even live music, good food
+            and generally a jolly good time! Many presentations were held from AI, Robotics, Bioinformatics, Deep learning, Blockchain and so much more. You can see more on their site <a href="https://ciit.finki.ukim.mk/" target="_blank" style="color: cyan">here</a>.</p>
+        <p>
+            And also a link to the paper <a href="Robot_hand_CIIT_2024.pdf" download="Robot_Hand_CIIT_2024.pdf" style="color: cyan">here</a>.
+        </p>
+        </body>
 </html>
