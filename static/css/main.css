@@ -4,6 +4,14 @@
         position: relative;
         font-family: "Play", sans-serif;
     }
+    
+    #project-terms a{
+        color: white;
+        font-family: 'Play', sans-serif;
+        font-size: 1.2rem;
+        text-decoration: none;
+        padding-right: 5px;
+    }  
 
     @media (min-width: 991px) {
         .container{
@@ -55,7 +63,6 @@
         
     }
 
-
     /* Responsive height adjustment for smaller screens */
     @media (max-width: 800px) {
         #background {
@@ -84,6 +91,10 @@
             display: none;
         }
 
+        #project-terms a{
+            font-size: 1rem;
+            padding-right: 0;
+        }
     }
 
     #centerSection{
@@ -251,9 +262,10 @@
     }
 
     #background{
-        height: 40rem;
+        height: auto;
         background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
         background-size: cover;
+        padding-bottom: 10%;
     }
 
 
@@ -438,13 +450,6 @@
         border-bottom: 1px cyan solid;
     }
 
-    #project-terms a{
-        color: white;
-        font-family: 'Play', sans-serif;
-        font-size: 1.2rem;
-        text-decoration: none;
-        padding-right: 5px;
-    }  
 
     .active {
         color: cyan !important;

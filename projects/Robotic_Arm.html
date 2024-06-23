@@ -1,11 +1,12 @@
 <style>
-    h1, p{
+    h1, h3, p{
         color: white;
     }
 
     *{
         scrollbar-width: thin; 
         scrollbar-color: cyan transparent;
+        background-color: rgb(14, 21, 56);
     }
 
     li::marker {
@@ -15,11 +16,79 @@
     ul{
         padding-left: 10px;
     }
-</style>
 
+    img{
+        max-width: 100%;
+    }
+</style>
 <html style="scrollbar-width: thin; scrollbar-color: cyan transparent;">
     <body>
-        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG" style="max-width: 100%;">
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg" alt="IMG">
+        <h1>Really? A robot?</h1>
+        <p>Yeah cool isn't it? It is a child's dream, so I thought about using my electronics knowledge to pull it off.
+            In this project, I used an ESP32 to control the robot's movements remotely. The ESP32 is a microcontroller which
+            is the brains of the operation, it handles bluetooth communication between the phone app (yeah made that too),
+            as well as the robot itself. Effectively making it so you can control the hand from a distance. The robot was also published
+            along with a research paper to an international organization called CIIT and presented at Hotel Sirius Strumica in 2024.
+            You can read more about it below:
+        </p>
         <h1>How it was made</h1>
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719133218/projects/nl9glkmqbalkikenvthd.png" alt="IMG">
+        <h3>Components</h3>
+        <ul>
+            <li><p>1 x Sheet of Plywood: This readily available and inexpensive material provides a sturdy yet lightweight base for the robotic arm. </p></li>
+            <li><p>1 x ESPRESSIF ESP32 Devmodule: The brain of the operation, translating smartphone app commands into precise movements for the servo motors.  </p></li>
+            <li><p>4 x Servo motors sg90: These compact units act as the arm's muscles, precisely rotating the joints based on commands. </p></li>
+            <li><p>1 x Battery Holder (3 cell): Provides power for both the servos and the ESP32 using standard AA batteries. </p></li>
+            <li><p>1 x Stable 5V Power Delivery: Ensures reliable servo operation using an Arduino Nano, a voltage step-up module, or a rechargeable Li-Ion battery (with charger). </p></li>
+            <li><p>(Optional) 1 x 3.7V Rechargeable Li-Ion Battery: As an alternative to a battery holder this could be used with a Li-Ion battery charger module for infinite re-use. </p></li>
+        </ul>
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132245/projects/hqkc3jhr40tmju9fou3y.jpg" alt="IMG" style="width: 50%; float: left;">
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132243/projects/nmtm8indeu7y29okrywa.jpg" alt="IMG" style="width: 40%; height: 40%;     float: right">
+        </div>
+        <h1>Considerations</h1>
+        <p>Firstly I was thinking about which material to use to build the frame out of. 3D printing could work but I didn't have access to a printer as they're very expensive,
+            and even if I found one the plastic would cost allot. So I decided to go with plywood, my dad had a few sheets lying around so I used that. It is a cheap material,
+            easy to work with, very sturdy and most importantly cheap.
+        </p>
+        <p>As for the electronics I was dead-set on an ESP32 because it contains much more memory than any Arduino which allows me to go wild with the bluetooth protocol and libraries.
+            It also has a bluetooth module built-in. Isn't that amazing?
+        </p>
+        <p>
+            The servos were a no-brainer, I had a few lying around from a previous project so I used those. They're cheap, easy to use, but had some issues with the SG90's pulling more current
+            than the battery could provide. Additionaly they sometimes couldn't handle the weight of the arm so I had to use some tricks up my sleeve. Making the screws which the arm pivots around more
+            loose. Also I effectively made a lever system (pivots around the front legs) so it can push the arm up allot more easily. In the future I plan to add metal gear servos with allot more torque.
+        </p>
+        <p>
+            The battery holder I just had lying around, it would of-course be allot better to use a rechargable Li-Ion battery. However that would require upping the voltage to 5V from 3.7V with a step-up module.
+            Also a potential upgrade in the near future.
+        </p>
+        <p>
+            This was all first tested on a breadboard with potentiometers until later transfering to a solder PCB. Making the electronics allot more compact so you can put them under the robot base.
+            The robot Bluetooth feature was later added after testing.
+        </p>
+        <video width="50%" height="240" controls>
+            <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132025/projects/w68jtyf2k2jb4jonrmx3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>SPACE</h1>
+        <video width="50%" height="240" controls>
+            <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132257/projects/gvccxqfdbjrf65wz4h9l.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>SPACE</h1>
+        <video width="100%" height="240" controls>
+            <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132038/projects/xxmubq6lmckixmur3l3v.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>SPACE</h1>
+        <video width="100%" height="240" controls>
+            <source src="https://res.cloudinary.com/dk2fdiuvb/video/upload/v1719132100/projects/cliymbfelyamufifv2gt.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719132241/projects/xoiccjepjri1k3lzmtod.jpg" alt="IMG">
+        <h1>Accomplishments</h1>
+        <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1719131804/projects/fgyednyxugksax54nnym.jpg" alt="IMG">
+        <h1>CIIT 2024</h1>
     </body>
 </html>
