@@ -126,7 +126,7 @@
             </div>
         </div>
     </section>
-    <section class="container" style="padding-bottom: 2%; padding-top: 4%;">
+    <section class="container reveal" style="padding-bottom: 2%; padding-top: 4%;">
         <div class="row">
             <div class="col col-lg-4 col-md-12 mb-5 col-12" id="secondTitle">
                 <span>MY SERVICES</span>
@@ -206,7 +206,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container reveal">
         <div id="project-terms" style="padding-top: 20px">
             <a id="all" class="active" href="#">ALL</a>
             <a id="WebDev" href="#">Web Dev</a>
@@ -429,6 +429,35 @@
             }
         })
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Automatically add 'active' class to the specific section on page load
+            var autoRevealSection = document.querySelector('.container.reveal');
+            if (autoRevealSection) {
+                autoRevealSection.classList.add('active');
+            }
+        
+            // Existing scroll reveal functionality
+            window.addEventListener('scroll', reveal);
+        
+            function reveal(){
+                var reveals = document.querySelectorAll('.reveal');
+        
+                for(var i = 0; i < reveals.length; i++){
+                    var windowHeight = window.innerHeight;
+                    var revealTop = reveals[i].getBoundingClientRect().top;
+                    var revealPoint = 150; // Adjust this value as needed
+        
+                    if(revealTop < windowHeight - revealPoint){
+                        reveals[i].classList.add('active');
+                    } else {
+                        // Optionally, remove 'active' class if element goes out of view
+                        reveals[i].classList.remove('active');
+                    }
+                }
+            }
+        });
+        </script>
     <div class="modal fade" id="projectModal" tabindex="1" aria-labelledby="projectLabel" aria-hidden="true">
         <div class="modal-dialog modal-l modal-dialog-scrollable">
             <div class="modal-content">
