@@ -24,7 +24,6 @@
 
         .card:hover{
             transform: scale(1.08);
-            background-color: blue;
         }
 
         .nav-link:focus{
@@ -530,7 +529,7 @@
 
     .reveal{
         position: relative;
-        transform: translateY(150px);
+        transform: translateY(50px);
         opacity: 0;
         transition: all 2s ease;
     }
@@ -540,3 +539,19 @@
         opacity: 1;
     }
     
+    .fadeIn {
+        opacity: 0;
+        transform: translateY(20px); /* Start 20px below its final position */
+        animation: fadeInUpAnimation 1s forwards;
+    }
+    
+    @keyframes fadeInUpAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(20px); /* Start the animation from 20px below */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0); /* End at its natural position */
+        }
+    }
