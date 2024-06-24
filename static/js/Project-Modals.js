@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Listen for clicks on anchors that open the modal
   document.querySelectorAll('[data-bs-toggle="modal"][data-iframe-src]').forEach(function(element) {
     element.addEventListener('click', function() {
       var iframeSrc = this.getAttribute('data-iframe-src');
@@ -9,18 +8,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-// Listen for clicks on anchors that open the modal
-document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function(element) {
+  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function(element) {
     element.addEventListener('click', function() {
-    var projectName = this.querySelector('h4').textContent; // Extract project name from <h5>
-    var modalTitle = document.querySelector('#projectModal .modal-title'); // Find the modal title element
+      var projectName = this.querySelector('h4').textContent;
+      var modalTitle = document.querySelector('#projectModal .modal-title');
 
-    if (modalTitle) {
-        modalTitle.textContent = projectName; // Set the modal title to the project name
-    }
+      if (modalTitle) {
+        modalTitle.textContent = projectName;
+      }
     });
-});
+  });
+
+  $('#projectModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); 
+    var projectName = button.find('h4').text(); 
+    var iframeSrc = button.data('iframe-src'); 
+
+    var modal = $(this);
+    modal.find('.modal-title').text(projectName); 
+    modal.find('iframe').attr('src', iframeSrc); 
+  });
 });
