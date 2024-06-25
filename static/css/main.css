@@ -1,15 +1,9 @@
-    .navbarStyle a, .navbarStyle a:hover, #portfolioBrand{
-        color: white;
-        text-decoration: none;
+    .navbarStyle a, .navbarStyle a:hover, #portfolioBrand, #logo{
         position: relative;
-        font-family: "Play", sans-serif;
     }
     
     #project-terms a{
-        color: white;
-        font-family: 'Play', sans-serif;
         font-size: 1.2rem;
-        text-decoration: none;
         padding-right: 5px;
     }  
 
@@ -45,9 +39,9 @@
         }
 
         @keyframes jump-combo {
-          0% { transform: translateY(0); } /* Start at original position */
-          50% { transform: translateY(-20px); } /* Jump up (0.5s) */
-          100% { transform: translateY(0); } /* Reset to original position (0.5s) */
+          0% { transform: translateY(0); } 
+          50% { transform: translateY(-20px); } 
+          100% { transform: translateY(0); }
         }
 
         .navbarStyle a:hover::before {
@@ -79,15 +73,12 @@
             transform: scaleX(1) scaleY(1);
         }
 
-        .owl-nav {
+        .owl-nav, .owl-dots{
             display: none;
         }
         
         .owl-carousel{
             position: relative;
-        }
-        .owl-dots{
-            display: none;
         }
 
         #project-terms a{
@@ -95,6 +86,7 @@
             padding-right: 0;
         }
     }
+
 
     #centerSection{
         background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
@@ -113,9 +105,7 @@
         backdrop-filter: blur(10px);
     }
 
-    .card h4, .card p{
-        color: white;
-    }
+
     .card p{
         font-size: 1.15rem;
     }
@@ -127,7 +117,6 @@
     #logo{
         height: auto;
         width: 40px;
-        position: relative;
         top: -0.5rem;
     }
 
@@ -140,9 +129,6 @@
         max-width: 10%;
     }
 
-    .contactIcons li a{
-        color: white;
-    }
 
     .contactIcons li a:hover{
         color: cyan;
@@ -180,10 +166,6 @@
         color: purple;
     }
 
-    .navbarStyle {
-        color: white;
-    }
-
 
     #sidebar{
         position: fixed;
@@ -201,11 +183,6 @@
         justify-content: flex-start;
     }
 
-    #sidebar li a{
-        color: white;
-        font-family: 'Play', sans-serif;
-    }
-
 
     #sidebar .nav-item:after{
         content: "";
@@ -216,32 +193,31 @@
 
 
     #fancyButton, #fancyButton:hover{
-        color: white;
-        text-decoration: none;
         position: relative;
         padding: 14px 32px 12px;
-        font-family: 'Play', sans-serif;
     }
 
-    #mainText span, #fancyButton, h2{
+    #fancyButton:hover, #mainText span, #mainText h2, #fancyButton, h2, #sidebar li a, #project-terms a, .navbarStyle a, .navbarStyle a:hover, #portfolioBrand, .card h4, .card p, .contactIcons li a, .navbarStyle, #centerNav a, #secondTitle h2{
         color: white;
         font-family: "Play", sans-serif;
+        text-decoration: none;
     }
 
+    .contactIcons li a:focus{
+        color: cyan;
+    }
     #mainText{
         animation: jump-combo 1s ease-in-out alternate; 
     }
 
 
     #mainText h2{
-        color: white;
         font-weight: bold;
     }
 
 
     #fancyButton, #mainText{
         font-size: 1rem;
-        color: white;
         text-shadow:
         -2px -2px 0 #000,
         2px -2px 0 #000,
@@ -360,9 +336,6 @@
         transform-origin: bottom right;
     }
 
-    #carouselPart{
-        height: 60vh;
-    }
 
     #carouselPart .card{
         height: 50vh;
@@ -371,6 +344,7 @@
     .card{
         margin-top: 5vh;
         margin-bottom: 5vh;
+        height: 50vh;
     }
 
     .gitLink{
@@ -391,7 +365,6 @@
 
     #secondTitle h2{
         position: relative;
-        color: white;
         font-weight: bold;
         font-size: 2.5rem;
     }
@@ -541,17 +514,17 @@
     
     .fadeIn {
         opacity: 0;
-        transform: translateY(20px); /* Start 20px below its final position */
+        transform: translateY(20px); 
         animation: fadeInUpAnimation 1s forwards;
     }
     
     @keyframes fadeInUpAnimation {
         from {
             opacity: 0;
-            transform: translateY(20px); /* Start the animation from 20px below */
+            transform: translateY(20px); 
         }
         to {
             opacity: 1;
-            transform: translateY(0); /* End at its natural position */
+            transform: translateY(0);
         }
     }
