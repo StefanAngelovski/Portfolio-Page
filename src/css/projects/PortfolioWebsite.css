@@ -1,0 +1,22 @@
+h1, p {
+    color: white;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: cyan transparent;
+}
+
+li::marker {
+    color: white;
+}
+
+ul {
+    padding-left: 10px;
+}
+
+img {
+    max-width: 100%;
+    padding-bottom: 5%;
+}
+
