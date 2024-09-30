@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -110,11 +110,12 @@ const ProjectCarousel = () => {
   const [revealClass, setRevealClass] = useState('reveal');
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [key, setKey] = useState(0);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     setRevealClass('reveal active');
   }, []);
-
 
   const handleProjectClick = async (project) => {
     const CustomComponent = lazy(() => import(`./projects/${project.componentName}.jsx`));
@@ -125,6 +126,11 @@ const ProjectCarousel = () => {
   const closeModal = () => {
     setModalOpen(false);
     setSelectedProject(null);
+  };
+
+  const handleFilterChange = (category) => {
+    setFilter(category);
+    setKey(prevKey => prevKey + 1);
   };
 
   const settings = {
@@ -160,14 +166,14 @@ const ProjectCarousel = () => {
         {['ALL', 'WebDev', 'Electronics', 'Mobile', 'Software'].map((category) => (
           <button
             key={category}
-            onClick={() => setFilter(category)}
+            onClick={() => handleFilterChange(category)}
             className={filter === category ? 'active' : ''}
           >
             {category}
           </button>
         ))}
       </div>
-      <Slider {...settings}>
+      <Slider key={key} ref={sliderRef} {...settings}>
         {filteredProjects.map((project) => (
           <div key={project.id} onClick={() => handleProjectClick(project)}>
             <div className="project-card" style={{ cursor: 'pointer' }}>

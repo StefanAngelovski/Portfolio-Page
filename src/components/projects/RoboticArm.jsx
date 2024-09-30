@@ -34,7 +34,7 @@ export default function RoboticArm() {
 
             <h1>Considerations</h1>
                 <p>
-                    The material choice for the frame was important. 3D printing was too expensive, so I opted for plywood, 
+                    The material choice for the frame was important. I didn't have a 3D printer available at the time, so I opted for plywood, 
                     which was sturdy, cheap, and readily available.
                 </p>
                 <p>
@@ -118,7 +118,7 @@ export default function RoboticArm() {
                     Learn more about the event <a href="https://ciit.finki.ukim.mk/" target="_blank" style={{ color: 'cyan' }}>here</a>.
                 </p>
                 <p>
-                    Download the research paper <a href="Robot_hand_CIIT_2024.pdf" download="Robot_Hand_CIIT_2024.pdf" style={{ color: 'cyan' }}>here</a>.
+                    Download the research paper <a href="https://res-console.cloudinary.com/dk2fdiuvb/media_explorer_thumbnails/53a81f1d1d53da4c69ad4102e9da4610/download" download="Robot_Hand_CIIT_2024.pdf" style={{ color: 'cyan' }}>here</a>.
                 </p>
             </section>
         </>
