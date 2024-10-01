@@ -31,8 +31,8 @@ export default function ProjectModalComponent({ project, isOpen, onClose }) {
                 </Modal.Title>
             </Modal.Header>
 
-            <Modal.Body className="text-white" style={{ padding: '1rem' }}>
-                <div className="container">
+            <Modal.Body className="text-white" style={{ padding: '1rem'}}>
+                <div className="container" >
                     {project.CustomComponent && (
                         <Row className="mb-3">
                             <Col>
