@@ -1,8 +1,8 @@
 import "../../css/projects/RoboticArm.css";
-export default function VoiceToTweet(){
+export default function VoiceToTweet(){ 
     return (
         <>  
-            <img src="https://private-user-images.githubusercontent.com/21228164/372270521-e11859d7-4522-49a1-add2-38beb844672d.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc3NzU1MTIsIm5iZiI6MTcyNzc3NTIxMiwicGF0aCI6Ii8yMTIyODE2NC8zNzIyNzA1MjEtZTExODU5ZDctNDUyMi00OWExLWFkZDItMzhiZWI4NDQ2NzJkLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAxVDA5MzMzMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFkM2M0MDM5MjMwYjI3YmI1MTJiMzIxNjNjYzM4YjE0NjY3ZDU5MjNlYzBiNmVkMTY3MmU1Y2ZhYWQ2YzMyYzAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.DVXp2SSuHQ7iCho4H4UH5aGnVZ4Eyl4I5aKh-zsgSdY" />
+            <img src="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1727776986/projects/crddqykm19wutlxjndcp.gif" />
             <hr/>
             <h1> What is it? </h1>
             <p><b>Voice To Tweet</b> is a web-based application that transcribes spoken words into text using OpenAI's Whisper Speech-to-Text model. The transcribed text is then posted as a tweet on X (formerly Twitter) via the Twitter4J API.</p>

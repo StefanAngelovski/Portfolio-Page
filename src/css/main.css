@@ -49,12 +49,9 @@
         width: 80%;
         opacity: 1;
     }
-
-    #sidebarButton{
-        display: none;
-    }
-    
 }
+
+
 
 /* Responsive height adjustment for smaller screens */
 @media (max-width: 800px) {
@@ -155,37 +152,13 @@
 }
 
 
-#sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 20vh;
-    z-index: 999;
-    background: linear-gradient(135deg, rgba(128, 0, 128, 0.9), rgba(0, 0, 255, 0.9));
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(100%); /* Initially move the sidebar off the screen */
-    transition: transform 0.3s ease-out; /* Animate the transform property */
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-
-#sidebar .nav-item:after{
-    content: "";
-    display: block;
-    border-bottom: 2px solid cyan;
-}
-
-
 
 #fancyButton, #fancyButton:hover{
     position: relative;
     padding: 14px 32px 12px;
 }
 
-#fancyButton:hover, #mainText span, #mainText h2, #fancyButton, h2, #sidebar li a, #project-terms a, .navbarStyle a, .navbarStyle a:hover, #portfolioBrand, .card h4, .card p, .contactIcons li a, .navbarStyle, #centerNav a, #secondTitle h2{
+#fancyButton:hover, #mainText span, #mainText h2, #fancyButton, h2, #project-terms a, .navbarStyle a, .navbarStyle a:hover, #portfolioBrand, .card h4, .card p, .contactIcons li a, .navbarStyle, #centerNav a, #secondTitle h2{
     color: white;
     font-family: "Play", sans-serif;
     text-decoration: none;

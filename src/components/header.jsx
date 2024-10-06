@@ -69,24 +69,6 @@ export default function Header({ openModal }) {
                             <SocialIcon key={index} {...link} />
                         ))}
                     </ul>
-
-                    {/* Sidebar button for mobile view */}
-                    <span id="sidebarButton" style={{ paddingRight: '10%' }}>
-                        <a style={{ background: 'none' }}>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed">
-                                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                            </svg>
-                        </a>
-                    </span>
-
-                    {/* Sidebar */}
-                    <div className="collapse" id="sidebar">
-                        <ul className="navbar-nav">
-                            {navLinks.filter(link => !link.modal).map((link, index) => (
-                                <NavigationItem key={index} {...link} />
-                            ))}
-                        </ul>
-                    </div>
                 </div>
             </nav>
 
