@@ -1,4 +1,4 @@
-import "../../css/projects/RoboticArm.css";
+import "../../css/projects/Projects.css";
 export default function ArkThreadripperLauncher() {
     return (
         <>
