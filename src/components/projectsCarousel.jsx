@@ -29,7 +29,7 @@ const projects = [
     title: 'Robotic Arm',
     description: 'Remotely controlled Robotic Arm - comes with an Android app.',
     image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg',
-    githubLink: '',
+    githubLink: 'https://github.com/StefanAngelovski/The_Robotic_Arm',
     category: 'Electronics',
     componentName: 'RoboticArm',
   },
@@ -38,7 +38,7 @@ const projects = [
     title: 'Bluetooth Speaker',
     description: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
     image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png',
-    githubLink: '',
+    githubLink: 'https://github.com/StefanAngelovski/ESP32_Bluetooth_Speaker',
     category: 'Electronics',
     componentName: 'BluetoothSpeaker',
   },
@@ -59,6 +59,15 @@ const projects = [
     githubLink: 'https://github.com/StefanAngelovski/Ark_Threadripper_Launcher',
     category: 'WebDev',
     componentName: 'VoiceToTweet',
+  },
+  {
+    id: 7,
+    title: 'Stormwing - Drone',
+    description: 'A small diy drone',
+    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1729352086/projects/b6nzsddtopcsv5m6yjwm.jpg',
+    category: 'Electronics',
+    githubLink: '',
+    componentName: 'Stormwing',
   }
 ];
 
