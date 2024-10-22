@@ -35,9 +35,9 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Bluetooth Speaker',
-    description: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1718913451/cards/en3l916rlzanwa0wdwcf.png',
+    title: 'ESP32 - Bluetooth Speaker',
+    description: 'A bluetooth speaker running on an ESP32 Dev Module, I2C decoder and audio amplifier.',
+    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1729623131/projects/kbhoamzvn8meolcrmitg.png',
     githubLink: 'https://github.com/StefanAngelovski/ESP32_Bluetooth_Speaker',
     category: 'Electronics',
     componentName: 'BluetoothSpeaker',
