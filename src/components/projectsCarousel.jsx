@@ -2,7 +2,7 @@ import React, { useState, useEffect, lazy, Suspense, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaRocket} from 'react-icons/fa';
 import ProjectModalComponent from './projectModal';
 
 const projects = [
@@ -12,6 +12,7 @@ const projects = [
     description: 'My personal portfolio containing all significant projects.',
     image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png',
     githubLink: 'https://github.com/StefanAngelovski/Portfolio-Page',
+    liveLink: 'https://physdev.site',
     category: 'WebDev',
     componentName: 'PortfolioWebsite',
   },
@@ -21,6 +22,7 @@ const projects = [
     description: 'Website for ordering exotic pets from the web using Django.',
     image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1720972855/media/Logos/aukinrub9mln8g1fwlc6.png',
     githubLink: 'https://github.com/StefanAngelovski/Exotic_Pet_Shop',
+    liveLink: 'https://petshop.physdev.site',
     category: 'WebDev',
     componentName: 'ExoticPetShop',
   },
@@ -57,6 +59,7 @@ const projects = [
     description: 'You can post tweets just by talking!\n\nUsing the power of whisper by OpenAI and Twitter4J APIs.',
     image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1722264708/cards/X-logo.jpg',
     githubLink: 'https://github.com/StefanAngelovski/Ark_Threadripper_Launcher',
+    liveLink: 'https://voicetotweet.physdev.site',
     category: 'WebDev',
     componentName: 'VoiceToTweet',
   },
@@ -112,7 +115,6 @@ const NextArrow = ({ className, onClick }) => {
     />
   );
 };
-
 
 const ProjectCarousel = () => {
   const [filter, setFilter] = useState('ALL');
@@ -187,21 +189,38 @@ const ProjectCarousel = () => {
           <div key={project.id} onClick={() => handleProjectClick(project)}>
             <div className="project-card" style={{ cursor: 'pointer' }}>
               <img src={project.image} alt={project.title} />
-              <div className="p-4">
+              <div className="p-3">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                {project.githubLink && (
-                  <a
-                    href="#"
-                    className="github-link"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent the card click event
-                      window.open(project.githubLink, '_blank');
-                    }}
-                  >
-                    <FaGithub size={24} />
-                  </a>
-                )}
+                <div className="flex gap-2">
+                  {project.githubLink && (
+                    <a
+                      href="#"
+                      className="github-link"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.githubLink, '_blank');
+                      }}
+                    >
+                      <FaGithub size={24} />
+                    </a>
+                  )}
+                  {project.liveLink && (
+                    <a
+                      href="#"
+                      className="live-link"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.liveLink, '_blank');
+                      }}
+                    >
+                      <div className="flex items-center gap-1">
+                        <FaRocket size={20} />
+                        <span>Live</span>
+                      </div>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

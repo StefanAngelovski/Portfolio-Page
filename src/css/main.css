@@ -425,7 +425,6 @@
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
     backdrop-filter: blur(10px);
     height: 50vh;
-    margin-top: 5vh;
     margin-bottom: 5vh;
     transition: all 0.3s;
 
@@ -459,7 +458,7 @@
   }
   
   .project-card p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   
   .github-link {
@@ -473,6 +472,31 @@
     color: cyan;
   }
   
+
+    .live-link {
+        position: absolute;
+        bottom: 10px; /* Adjust this as needed */
+        left: 10px; /* Adjust this as needed */
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+  
+  .live-link:hover {
+    background-color: #45a049; 
+  }
+  
+  .live-link svg {
+    margin-right: 5px;
+  }
+
+
   .project-filters {
     padding-top: 18px;
     border-bottom: 1px cyan solid;
