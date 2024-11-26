@@ -424,7 +424,7 @@
   .project-card {
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(255, 255, 255, 0.0));
     backdrop-filter: blur(10px);
-    height: 50vh;
+    height: 54vh;
     margin-top: 4vh;
     margin-bottom: 5vh;
     transition: all 0.3s;
@@ -449,6 +449,7 @@
   
   .project-card h3,
   .project-card p {
+    padding-top: 0;
     color: white;
     font-family: "Play", sans-serif;
   }

@@ -71,6 +71,15 @@ const projects = [
     category: 'Electronics',
     githubLink: '',
     componentName: 'Stormwing',
+  },
+  {
+    id: 8,
+    title: 'JSP - Simulator',
+    description: 'Unity Game that simulates the experience of riding a bus in the city of Skopje.',
+    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732583935/projects/diq3ax0bfzb5wrlrtpap.png',
+    category: 'GameDev',
+    githubLink: 'https://github.com/StefanAngelovski/JSP-Simulator',
+    componentName: 'JSP-Simulator',
   }
 ];
 
@@ -174,7 +183,7 @@ const ProjectCarousel = () => {
   return (
     <div className={`project-carousel ${revealClass} container`}>
       <div className="project-filters">
-        {['ALL', 'WebDev', 'Electronics', 'Mobile', 'Software'].map((category) => (
+        {['ALL', 'WebDev', 'Electronics', 'Mobile', 'Software', 'GameDev'].map((category) => (
           <button
             key={category}
             onClick={() => handleFilterChange(category)}
