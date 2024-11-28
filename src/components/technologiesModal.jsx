@@ -24,22 +24,27 @@ export default function TechnologiesModal({isOpen, onClose}) {
       { name: 'Java', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148602/Background%20media/logos/ppi4huc7gyewje11nuwe.svg' },
       { name: 'JavaScript', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/g5w9iyvkzbabfevxe8sy.svg' },
       { name: 'Python', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/ydbszjgfjryctt9jwbwg.svg' },
+      {name: 'Rust', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg'},
       { name: 'Mips - Assembly', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726785127/Background%20media/logos/vnqx97hz1vtedostha7z.svg' }
     ],
     "Software Development": [
       { name: 'Windows PowerShell', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784419/Background%20media/logos/zmtbahctxzzvszl2kyof.svg' },
       { name: 'Windows Forms', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784926/Background%20media/logos/rficksfr6dr2lyancfgn.svg' },
     ],
+    "Embedded Systems": [
+      {name: 'Arduino', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg'},
+      {name: 'ESP-IDF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732784787/Background%20media/logos/oqfjnp5vr8zrk7ij4vwq.svg'}
+    ],
     "IDEs Used": [
-      { name: 'Arduino', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg' },
-      { name: 'IntelliJ Idea and PyCharm', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/uixjadj72rx3e6ozlbxd.svg' },
+      { name: 'Arduino IDE', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg' },
+      { name: 'JetBrains IDEs', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/uixjadj72rx3e6ozlbxd.svg' },
       { name: 'Unity', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717151590/Background%20media/logos/yufy2xjiuseala5lcywc.svg' },
       { name: 'VS Code', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784699/Background%20media/logos/dm7b1yr3ymcudhw7askk.svg' },
       { name: 'Microsoft Visual Studio', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784622/Background%20media/logos/fwnna1kdi7czco2wd57b.svg' }
     ],
     "Other Skills": [
       "Knowledge of electronics, computer hardware and architecture, virtual machines, and Github.",
-      "Understanding of Android and Windows operating systems, as well as Microsoft 365 applications.",
+      "Understanding of Android, Linux and Windows operating systems, as well as Microsoft 365 applications.",
       "Experience with UI/UX design using Paint.net."
     ]
   };
