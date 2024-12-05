@@ -30,10 +30,12 @@ export default function TechnologiesModal({isOpen, onClose}) {
     "Software Development": [
       { name: 'Windows PowerShell', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784419/Background%20media/logos/zmtbahctxzzvszl2kyof.svg' },
       { name: 'Windows Forms', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784926/Background%20media/logos/rficksfr6dr2lyancfgn.svg' },
+      { name: 'Windows WPF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1733435744/Background%20media/logos/ixwp5origldizi6nwlu4.png'},
     ],
     "Embedded Systems": [
       {name: 'Arduino', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg'},
-      {name: 'ESP-IDF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732784787/Background%20media/logos/oqfjnp5vr8zrk7ij4vwq.svg'}
+      {name: 'ESP-IDF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732784787/Background%20media/logos/oqfjnp5vr8zrk7ij4vwq.svg'},
+      {name: 'STM32Cube', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1733437676/Background%20media/logos/wf0uv2emubxnpogoewwl.svg'},
     ],
     "IDEs Used": [
       { name: 'Arduino IDE', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg' },

@@ -199,7 +199,7 @@
 
 #background{
     height: auto;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1716592638/Background%20media/mbyz8vjxi8sxwyvzcepa.jpg') no-repeat center top;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://res.cloudinary.com/dk2fdiuvb/image/upload/v1733434832/Background%20media/ingaumrwlujed5hvmtui.png') no-repeat center top;
     background-size: cover;
     padding-bottom: 10%;
 }
@@ -479,8 +479,8 @@
 
     .live-link {
         position: absolute;
-        bottom: 10px; /* Adjust this as needed */
-        left: 10px; /* Adjust this as needed */
+        bottom: 10px;
+        left: 10px;
         display: inline-flex;
         align-items: center;
         gap: 5px;

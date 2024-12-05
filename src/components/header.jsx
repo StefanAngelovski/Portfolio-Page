@@ -18,7 +18,7 @@ const NavigationItem = ({ text, target, modal, openModal }) => {
     const handleClick = (e) => {
         e.preventDefault();
         if (modal) {
-            openModal(); // Call openModal if this is the TECH link
+            openModal(); 
         } else {
             const element = document.getElementById(target);
             if (element) {
