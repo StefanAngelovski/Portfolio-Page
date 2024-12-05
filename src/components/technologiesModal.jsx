@@ -30,7 +30,7 @@ export default function TechnologiesModal({isOpen, onClose}) {
     "Software Development": [
       { name: 'Windows PowerShell', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784419/Background%20media/logos/zmtbahctxzzvszl2kyof.svg' },
       { name: 'Windows Forms', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726784926/Background%20media/logos/rficksfr6dr2lyancfgn.svg' },
-      { name: 'Windows WPF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1733435744/Background%20media/logos/ixwp5origldizi6nwlu4.png'},
+      { name: 'Windows WPF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1733436993/Background%20media/logos/i9nj4p2aziey9scl76qu.png'},
     ],
     "Embedded Systems": [
       {name: 'Arduino', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg'},
