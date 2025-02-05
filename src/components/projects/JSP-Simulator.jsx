@@ -1,4 +1,4 @@
-import React from 'react';
+import '../../css/projects/Projects.css';
 
 export default function JSPSimulator() {
     return (
