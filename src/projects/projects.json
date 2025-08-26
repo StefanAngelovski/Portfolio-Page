@@ -89,7 +89,7 @@
     "repo": "StefanAngelovski/Arduino_Projects",
     "title": "Arduino Projects",
     "description": "Working examples for every module I own, fully tested.",
-    "image": "https://private-user-images.githubusercontent.com/21228164/372360153-fd59d7f9-f679-4b04-af4b-6277c5b97189.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYyMjk5NDUsIm5iZiI6MTc1NjIyOTY0NSwicGF0aCI6Ii8yMTIyODE2NC8zNzIzNjAxNTMtZmQ1OWQ3ZjktZjY3OS00YjA0LWFmNGItNjI3N2M1Yjk3MTg5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA4MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwODI2VDE3MzQwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY3YWNhMmNhMTU0NjRiZWRiY2Y3YTE4OTE2OTgyNjU0MmNiN2MxOTRhMmQ2MjQxYzU4M2U1YjJlYWQzYjA2YTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.zni9TrkJPYbwRAW9DyF44mkX-DehEP94wDxEDs81z8Q",
+    "image": "https://github-production-user-asset-6210df.s3.amazonaws.com/21228164/372360153-fd59d7f9-f679-4b04-af4b-6277c5b97189.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250826%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250826T203824Z&X-Amz-Expires=300&X-Amz-Signature=800f8cee54f7c98adcc78bbea5b38503109674259ed3d2a733ccb9da52448c49&X-Amz-SignedHeaders=host",
     "live": "",
     "category": "Electronics"
   },
@@ -104,8 +104,8 @@
   {
     "repo": "StefanAngelovski/Raspberry-IO-Projects",
     "title": "Raspberry Pi Projects",
-    "description": "Several components with tested basic working code to ease embedded work on the Raspberry Pi .",
-    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756231294/projects/Raspberry-Pi-Logo_jhjoqt.jpg,",
+    "description": "Several components with tested basic working code to ease embedded work on the Raspberry Pi.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756231294/projects/Raspberry-Pi-Logo_jhjoqt.jpg",
     "live": "",
     "category": "Electronics"
   }
