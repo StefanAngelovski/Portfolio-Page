@@ -5,6 +5,7 @@ import Header from './components/header';
 import ProjectsHero from './components/projectsHero';
 import TechnologiesModal from './components/technologiesModal';
 import './css/main.css';
+import './css/projects/Projects.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';

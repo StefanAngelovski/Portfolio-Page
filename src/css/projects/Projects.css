@@ -1,3 +1,38 @@
+/* Make the stars number in carousel cards white */
+.github-stars {
+    color: #fff !important;
+}
+.markdown-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: blur(16px);
+    transition: filter 0.5s ease;
+}
+
+.markdown-content img.loaded {
+    filter: none;
+}
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+
+.markdown-content th, .markdown-content td {
+    border: 1px solid #a259ff;
+    padding: 8px 12px;
+    color: white;
+    background: #2d014d;
+}
+
+.markdown-content th {
+    background: #a259ff;
+    color: white;
+    font-weight: bold;
+}
 h1, h3, p{
     color: white;
     padding-top: 12px;
@@ -18,6 +53,59 @@ ul{
 
 img{
     max-width: 100%;
+}
+
+
+.project-modal-content {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.project-modal-content .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.markdown-content {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.markdown-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.markdown-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    background: #222;
+    color: cyan;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.markdown-content code {
+    background: #222;
+    color: cyan;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.markdown-content ul, .markdown-content ol {
+    padding-left: 20px;
 }
 
 .image-video-wrapper {

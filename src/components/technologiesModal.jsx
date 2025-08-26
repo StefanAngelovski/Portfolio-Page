@@ -24,7 +24,7 @@ export default function TechnologiesModal({isOpen, onClose}) {
       { name: 'Java', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148602/Background%20media/logos/ppi4huc7gyewje11nuwe.svg' },
       { name: 'JavaScript', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/g5w9iyvkzbabfevxe8sy.svg' },
       { name: 'Python', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148181/Background%20media/logos/ydbszjgfjryctt9jwbwg.svg' },
-      {name: 'Rust', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg'},
+      { name: 'Rust', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg'},
       { name: 'Mips - Assembly', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1726785127/Background%20media/logos/vnqx97hz1vtedostha7z.svg' }
     ],
     "Software Development": [
@@ -36,6 +36,7 @@ export default function TechnologiesModal({isOpen, onClose}) {
       {name: 'Arduino', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg'},
       {name: 'ESP-IDF', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732784787/Background%20media/logos/oqfjnp5vr8zrk7ij4vwq.svg'},
       {name: 'STM32Cube', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1733437676/Background%20media/logos/wf0uv2emubxnpogoewwl.svg'},
+      {name: 'Raspberry Pi', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756231034/Background%20media/logos/raspberry-logo-raspberry-pi-svgrepo-com_q112ec.svg'}
     ],
     "IDEs Used": [
       { name: 'Arduino IDE', logo: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717148182/Background%20media/logos/podctzxm9v8rslrzntuo.svg' },

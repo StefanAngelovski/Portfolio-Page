@@ -1,0 +1,112 @@
+[
+  {
+    "repo": "/StefanAngelovski/Ark_Threadripper_Launcher",
+    "title": "ARK Threadripper Launcher",
+    "description": "A launcher for a Server in a game called ARK Survival Evolved.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png",
+    "live": "",
+    "category": "Software"
+    
+  },
+  {
+    "repo": "StefanAngelovski/ESP32_Bluetooth_Speaker",
+    "title": "ESP32 - Bluetooth Speaker",
+    "description": "A bluetooth speaker running on an ESP32 Dev Module, I2C decoder and audio amplifier.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1729623131/projects/kbhoamzvn8meolcrmitg.png",
+    "live": "",
+    "category": "Electronics"
+    
+  },
+  {
+    "repo": "StefanAngelovski/Exotic_Pet_Shop",
+    "title": "Exotic Pet Shop",
+    "description": "Website for ordering exotic pets from the web using Django.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1720972855/media/Logos/aukinrub9mln8g1fwlc6.png",
+    "live": "https://petshop.42.mk",
+    "category": "WebDev"
+    
+  },
+  {
+    "repo": "StefanAngelovski/JSP-Simulator",
+    "title": "JSP - Simulator",
+    "description": "Unity Game that simulates the experience of riding a bus in the city of Skopje.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732583935/projects/diq3ax0bfzb5wrlrtpap.png",
+    "live": "",
+    "category": "GameDev"
+  },
+  {
+    "repo": "StefanAngelovski/Portfolio-Page",
+    "title": "Portfolio Website",
+    "description": "My personal portfolio containing all significant projects.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png",
+    "live": "https://physforge.site",
+    "category": "WebDev"
+    
+  },
+  {
+    "repo": "StefanAngelovski/The_Robotic_Arm",
+    "title": "Robotic Arm",
+    "description": "Remotely controlled Robotic Arm - comes with an Android app.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg",
+    "live": "",
+    "category": "Electronics"
+    
+  },
+  {
+    "repo": "StefanAngelovski/Stormwing",
+    "title": "Stormwing - Drone",
+    "description": "A small diy drone, currently under development.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1729352086/projects/b6nzsddtopcsv5m6yjwm.jpg",
+    "live": "",
+    "category": "Electronics"
+  },
+  {
+    "repo": "StefanAngelovski/VoiceToTweet",
+    "title": "Voice To Tweet",
+    "description": "You can post tweets just by talking!\n\nUsing the power of whisper by OpenAI and Twitter4J APIs.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1722264708/cards/X-logo.jpg",
+    "live": "https://voicetotweet.42.mk",
+    "category": "WebDev"
+    
+  },
+  {
+    "repo": "StefanAngelovski/Crossmix-Themes",
+    "title": "Crossmix Themes",
+    "description": "A list of OS themes I made from many different games and movies meant for the Trimui Smart Pro handheld. More will be added with time.",
+    "image": "https://raw.githubusercontent.com/StefanAngelovski/Crossmix-Themes/refs/heads/main/World%20of%20Warcraft%20-%20Deathwing/preview.png",
+    "live": "",
+    "category": "GameDev"
+  },
+  {
+    "repo": "StefanAngelovski/Immersivity",
+    "title": "Immersivity",
+    "description": " The third place winner of the official Finki 2025 VR Hackathon. Also used for the subject aptly named \"Virtual reality\" ",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756229452/projects/8f2dbddd-d3ea-4518-8473-ea8ef870092f.png",
+    "live": "",
+    "category": "GameDev"
+  },
+  {
+    "repo": "StefanAngelovski/Arduino_Projects",
+    "title": "Arduino Projects",
+    "description": "Working examples for every module I own, fully tested.",
+    "image": "https://private-user-images.githubusercontent.com/21228164/372360153-fd59d7f9-f679-4b04-af4b-6277c5b97189.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYyMjk5NDUsIm5iZiI6MTc1NjIyOTY0NSwicGF0aCI6Ii8yMTIyODE2NC8zNzIzNjAxNTMtZmQ1OWQ3ZjktZjY3OS00YjA0LWFmNGItNjI3N2M1Yjk3MTg5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA4MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwODI2VDE3MzQwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY3YWNhMmNhMTU0NjRiZWRiY2Y3YTE4OTE2OTgyNjU0MmNiN2MxOTRhMmQ2MjQxYzU4M2U1YjJlYWQzYjA2YTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.zni9TrkJPYbwRAW9DyF44mkX-DehEP94wDxEDs81z8Q",
+    "live": "",
+    "category": "Electronics"
+  },
+  {
+    "repo": "StefanAngelovski/ESP-IDF-Projects",
+    "title": "ESP-IDF Projects",
+    "description": "Basic working code for many components running via ESP-IDF in the C Programming language.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756231294/projects/9460735_fuwwqy.png",
+    "live": "",
+    "category": "Electronics"
+  },
+  {
+    "repo": "StefanAngelovski/Raspberry-IO-Projects",
+    "title": "Raspberry Pi Projects",
+    "description": "Several components with tested basic working code to ease embedded work on the Raspberry Pi .",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756231294/projects/Raspberry-Pi-Logo_jhjoqt.jpg,",
+    "live": "",
+    "category": "Electronics"
+  }
+]

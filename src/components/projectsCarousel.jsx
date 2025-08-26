@@ -4,84 +4,17 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaGithub, FaRocket} from 'react-icons/fa';
 import ProjectModalComponent from './projectModal';
+import projectsWhitelist from '../projects/projects.json';
 
-const projects = [
-  {
-    id: 1,
-    title: 'Portfolio Website',
-    description: 'My personal portfolio containing all significant projects.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717072089/cards/b0hkg4vkjl6cyrvkzcdr.png',
-    githubLink: 'https://github.com/StefanAngelovski/Portfolio-Page',
-    liveLink: 'https://physforge.site',
-    category: 'WebDev',
-    componentName: 'PortfolioWebsite',
-  },
-  {
-    id: 2,
-    title: 'Exotic Pet Shop',
-    description: 'Website for ordering exotic pets from the web using Django.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1720972855/media/Logos/aukinrub9mln8g1fwlc6.png',
-    githubLink: 'https://github.com/StefanAngelovski/Exotic_Pet_Shop',
-    liveLink: 'https://petshop.physforge.site',
-    category: 'WebDev',
-    componentName: 'ExoticPetShop',
-  },
-  {
-    id: 3,
-    title: 'Robotic Arm',
-    description: 'Remotely controlled Robotic Arm - comes with an Android app.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717076078/cards/vjbf82mmubdraujd7ibh.jpg',
-    githubLink: 'https://github.com/StefanAngelovski/The_Robotic_Arm',
-    category: 'Electronics',
-    componentName: 'RoboticArm',
-  },
-  {
-    id: 4,
-    title: 'ESP32 - Bluetooth Speaker',
-    description: 'A bluetooth speaker running on an ESP32 Dev Module, I2C decoder and audio amplifier.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1729623131/projects/kbhoamzvn8meolcrmitg.png',
-    githubLink: 'https://github.com/StefanAngelovski/ESP32_Bluetooth_Speaker',
-    category: 'Electronics',
-    componentName: 'BluetoothSpeaker',
-  },
-  {
-    id: 5,
-    title: 'ARK Threadripper Launcher',
-    description: 'A launcher for a Server in a game called ARK Survival Evolved.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1717156462/cards/hksnbcces87fd8lpbsxv.png',
-    githubLink: 'https://github.com/StefanAngelovski/Ark_Threadripper_Launcher',
-    category: 'Software',
-    componentName: 'ArkThreadripperLauncher',
-  },
-  {
-    id: 6,
-    title: 'Voice To Tweet',
-    description: 'You can post tweets just by talking!\n\nUsing the power of whisper by OpenAI and Twitter4J APIs.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1722264708/cards/X-logo.jpg',
-    githubLink: 'https://github.com/StefanAngelovski/Ark_Threadripper_Launcher',
-    liveLink: 'https://voicetotweet.physforge.site',
-    category: 'WebDev',
-    componentName: 'VoiceToTweet',
-  },
-  {
-    id: 7,
-    title: 'Stormwing - Drone',
-    description: 'A small diy drone',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1729352086/projects/b6nzsddtopcsv5m6yjwm.jpg',
-    category: 'Electronics',
-    githubLink: '',
-    componentName: 'Stormwing',
-  },
-  {
-    id: 8,
-    title: 'JSP - Simulator',
-    description: 'Unity Game that simulates the experience of riding a bus in the city of Skopje.',
-    image: 'https://res.cloudinary.com/dk2fdiuvb/image/upload/v1732583935/projects/diq3ax0bfzb5wrlrtpap.png',
-    category: 'GameDev',
-    githubLink: 'https://github.com/StefanAngelovski/JSP-Simulator',
-    componentName: 'JSP-Simulator',
+const fetchGithubData = async (repo) => {
+  try {
+    const response = await fetch(`https://api.github.com/repos/${repo}`);
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
   }
-];
+};
 
 const PrevArrow = ({ className, onClick }) => {
   const [hover, setHover] = useState(false);
@@ -125,21 +58,44 @@ const NextArrow = ({ className, onClick }) => {
   );
 };
 
+
 const ProjectCarousel = () => {
   const [filter, setFilter] = useState('ALL');
   const [revealClass, setRevealClass] = useState('reveal');
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [key, setKey] = useState(0);
+  const [projects, setProjects] = useState([]);
   const sliderRef = useRef(null);
 
   useEffect(() => {
     setRevealClass('reveal active');
+    // Load whitelist and fetch GitHub data
+    const loadProjects = async () => {
+      const loadedProjects = await Promise.all(
+        projectsWhitelist.map(async (item, idx) => {
+          const githubData = item.repo ? await fetchGithubData(item.repo) : null;
+          return {
+            id: idx + 1,
+            title: item.title,
+            description: item.description,
+            image: item.image,
+            githubLink: item.repo ? `https://github.com/${item.repo}` : '',
+            liveLink: item.live,
+            stars: githubData?.stargazers_count || 0,
+            name: item.name || item.title,
+            repo: item.repo,
+            category: item.category
+          };
+        })
+      );
+      setProjects(loadedProjects);
+    };
+    loadProjects();
   }, []);
 
   const handleProjectClick = async (project) => {
-    const CustomComponent = lazy(() => import(`./projects/${project.componentName}.jsx`));
-    setSelectedProject({ ...project, CustomComponent });
+    setSelectedProject(project);
     setModalOpen(true);
   };
 
@@ -204,24 +160,22 @@ const ProjectCarousel = () => {
                 <div className="flex gap-2">
                   {project.githubLink && (
                     <a
-                      href="#"
+                      href={project.githubLink}
                       className="github-link"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.githubLink, '_blank');
-                      }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
                     >
                       <FaGithub size={24} />
                     </a>
                   )}
-                  {project.liveLink && (
+                  {project.liveLink && project.liveLink !== '' && (
                     <a
-                      href="#"
+                      href={project.liveLink}
                       className="live-link"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.liveLink, '_blank');
-                      }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
                     >
                       <div className="flex items-center gap-1">
                         <FaRocket size={20} />
@@ -230,6 +184,9 @@ const ProjectCarousel = () => {
                     </a>
                   )}
                 </div>
+                {project.stars > 0 && (
+                  <div className="github-stars">⭐ {project.stars}</div>
+                )}
               </div>
             </div>
           </div>
