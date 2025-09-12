@@ -75,7 +75,7 @@
     "description": "A list of OS themes I made from many different games and movies meant for the Trimui Smart Pro handheld. More will be added with time.",
     "image": "https://raw.githubusercontent.com/StefanAngelovski/Crossmix-Themes/refs/heads/main/World%20of%20Warcraft%20-%20Deathwing/preview.png",
     "live": "",
-    "category": "GameDev"
+    "category": "Software"
   },
   {
     "repo": "StefanAngelovski/Immersivity",
@@ -108,5 +108,13 @@
     "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1756231294/projects/Raspberry-Pi-Logo_jhjoqt.jpg",
     "live": "",
     "category": "Electronics"
+  },
+  {
+    "repo": "StefanAngelovski/Plunder",
+    "title": "Plunder",
+    "description": "Web-scraper and frontend app for the Trimui Smart Pro, letting you easily browse and access ROM sites directly from your handheld.",
+    "image": "https://res.cloudinary.com/dk2fdiuvb/image/upload/v1757708436/projects/Plunder_logo_edhjvx.png",
+    "live": "",
+    "category": "Software"
   }
 ]
