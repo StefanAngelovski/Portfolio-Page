@@ -90,8 +90,22 @@ const ProjectCarousel = () => {
         })
       );
       setProjects(loadedProjects);
+      // Force re-render after projects are loaded
+      setKey(prevKey => prevKey + 1);
     };
     loadProjects();
+  }, []);
+
+  // Add useEffect to handle slider refresh on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (sliderRef.current) {
+        sliderRef.current.slickGoTo(0);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const handleProjectClick = async (project) => {
@@ -118,17 +132,21 @@ const ProjectCarousel = () => {
     nextArrow: <NextArrow />,
     swipe: true,
     swipeToSlide: true,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          adaptiveHeight: true,
         }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
+          adaptiveHeight: true,
+          centerMode: false,
         }
       }
     ]

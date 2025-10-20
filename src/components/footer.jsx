@@ -34,7 +34,7 @@ export default function Footer() {
                         <span>City: Skopje<br /></span>
                         <span style={{ paddingBottom: '50px' }}>Residence: Macedonia<br /></span>
                         <br />
-                        <a href="https://res-console.cloudinary.com/dk2fdiuvb/media_explorer_thumbnails/ec40df5570f0ed5706871bf3a1cf5a4a/download" className="text-white" style={{ textDecoration: 'none' }}>Download CV &#8594;</a>
+                        <a href="https://res.cloudinary.com/dk2fdiuvb/image/upload/v1760959096/Stefan_Angelovski_kg6uey.pdf" className="text-white" style={{ textDecoration: 'none' }}>Download CV &#8594;</a>
                     </div>
 
                     <div className="pb-4 col col-md-4 col-12">
