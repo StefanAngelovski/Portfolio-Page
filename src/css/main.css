@@ -78,13 +78,13 @@
 
 
 #centerSection{
-    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://preview.colorlib.com/theme/videograph/img/callto-bg.jpg.webp') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('https://cdn.mos.cms.futurecdn.net/fPVDj3VLuha3BgRjEYw5Km.jpg') no-repeat center center;
     background-size: contain;
     background-size: 100% auto;
     padding: 10% 0%;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
 }
@@ -155,6 +155,8 @@
 
 #fancyButton, #fancyButton:hover{
     position: relative;
+    display: inline-block;
+    margin-top: 1rem;
     padding: 14px 32px 12px;
 }
 
@@ -174,6 +176,25 @@
 
 #mainText h2{
     font-weight: bold;
+    margin: 0;
+    display: inline-block;
+    color: transparent;
+    background-image: linear-gradient(90deg, #00c8ff 0%, #d9ffff 20%, #ffffff 35%, #00e5ff 50%, #b8ffff 65%, #00c8ff 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.85);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.45), 0 0 16px rgba(0, 255, 255, 0.25);
+    animation: projectsShimmer 3s linear infinite;
+}
+
+@keyframes projectsShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 
@@ -207,8 +228,9 @@
 
 #verticalCenter{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
+    padding: 0.5rem 0 0;
 }
 
 .rulerSection{
@@ -502,7 +524,8 @@
 
 
   .project-filters {
-    padding-top: 18px;
+      margin-top: 1rem;
+      padding-top: 1.25rem;
     border-bottom: 1px cyan solid;
     margin-bottom: 20px;
   }
